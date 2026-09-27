@@ -1,0 +1,87 @@
+# LenguApp
+
+Plataforma de Español y Lengua Castellana para colegios de Colombia (grados 6° a 11°, 54 lecciones alineadas a los Lineamientos Curriculares, los Estándares Básicos de Competencias en Lenguaje y los DBA del MEN), hermana de QuimicaLearn. Tiene cuentas de docente y estudiante, XP, insignias y panel del docente.
+
+Cada lección tiene cuatro momentos:
+
+1. **Aprende:** una escena interactiva (3D o 2D) que cambia con cada paso de la explicación: el circuito de la comunicación, la palabra por dentro, la oración en bloques, el diorama del relato, la balanza argumentativa, el mapa del habla de Colombia…
+2. **Practica:** una actividad propia de lenguaje: clasificar, ordenar, marcar en el texto, completar, armar oraciones, escritura guiada (plan, borrador y revisión), grabar la voz con rúbrica y organizadores gráficos.
+3. **Juega:** dos minijuegos (lluvia de tildes, cazador en el texto, puente de conectores, detective de noticias, duelo de argumentos, rima rápida…). El docente fija cuántas estrellas pide cada juego.
+4. **Demuestra:** quiz de 3 preguntas marcadas por nivel de lectura (literal, inferencial y crítico).
+
+Cada unidad cierra con un **Reto**. El contrato de actividades, escenas y juegos está en `web/lib/SPEC.md`; el contenido de cada grado vive en `web/content/g<n>.ts`, `scenes-g<n>.js` y `juegos-g<n>.js`. Si agregas o quitas lecciones, corre `cd api && npm run sync-lessons`.
+
+Todo corre en capas gratuitas:
+
+| Parte | Dónde | Plan gratuito |
+|---|---|---|
+| Web (Next.js 16) | Vercel | Hobby |
+| Servidor / API (Node 22 + Express) | Render | Free |
+| Base de datos (MongoDB) | MongoDB Atlas | M0 Free (512 MB, no vence) |
+
+```
+Navegador ──► Vercel (Next.js) ──/api/*──► Render (Node) ──TLS──► MongoDB Atlas
+```
+
+La web reenvía `/api/*` a la API, así la sesión funciona en el mismo dominio y no hace falta configurar CORS.
+
+## Carpetas
+
+- `web/` aplicación Next.js (lo que se sube a Vercel).
+- `api/` servidor Node que corre en Render.
+- `render.yaml` Blueprint de Render para la API.
+
+## Cómo funcionan las cuentas
+
+- **Docente:** entra con la cuenta fija (`ADMIN_EMAIL` / `ADMIN_PASSWORD` en Render; el registro está cerrado), crea cursos (ej. "10A") y recibe un código de 6 caracteres por curso.
+- **Estudiante:** entra con el código del curso, su nombre y un PIN de 4 números que inventa la primera vez. No necesita correo (útil con menores de edad). Si olvida el PIN, el docente lo cambia desde el panel.
+- **Sin cuenta:** la plataforma funciona igual y guarda el avance en el navegador.
+- El XP lo calcula el servidor (20 por actividad, 10 por cada estrella nueva del quiz), así nadie lo puede inflar desde el navegador.
+
+## Probar en tu computador
+
+Requiere Node 22.
+
+```bash
+cd api && npm install && npm run dev        # API en :4000 (sin MONGODB_URI usa memoria)
+cd web && npm install && npm run dev        # web en http://localhost:3000
+cd api && npm test                          # pruebas de la API (con TEST_MONGODB_URI también contra MongoDB)
+```
+
+## Despliegue con Vercel + Render
+
+Web en **Vercel**, API en **Render** y base de datos en **MongoDB Atlas**. Todo gratis.
+
+### 0. Subir el código a GitHub
+El código ya está en https://github.com/SourceCode98/LenguApp. Si partes de cero: crea un repositorio vacío y súbelo con GitHub Desktop (*File › Add local repository › Publish repository*) o con `git init && git add . && git commit -m "LenguApp" && git branch -M main && git remote add origin <URL> && git push -u origin main`.
+
+### 1. Base de datos en MongoDB Atlas
+1. Crea una cuenta en https://www.mongodb.com/cloud/atlas/register (no pide tarjeta).
+2. *Create cluster* › elige **M0 (Free)**, proveedor AWS, región **N. Virginia (us-east-1)** o **Ohio (us-east-2)** para que quede cerca de Render.
+3. **Database Access** › *Add New Database User*: usuario `lenguapp` y una contraseña sin símbolos raros (letras y números). Rol: *Read and write to any database*.
+4. **Network Access** › *Add IP Address* › **Allow access from anywhere** (`0.0.0.0/0`). Render gratis no tiene IP fija, así que es necesario; la contraseña protege el acceso.
+5. En el clúster: *Connect › Drivers* › copia la cadena `mongodb+srv://…` y reemplaza `<db_password>` por la contraseña. Esa es `MONGODB_URI`.
+
+La API crea sola la base `lenguapp`, sus colecciones e índices la primera vez que arranca.
+
+### 2. API en Render
+1. Crea una cuenta en https://render.com con tu cuenta de GitHub.
+2. *New › Blueprint* › elige el repositorio. Render lee `render.yaml` y crea el servicio `lenguapp-api` (plan Free).
+3. Te pide `MONGODB_URI` (pega la cadena de Atlas) y la cuenta de docente: `ADMIN_EMAIL` y `ADMIN_PASSWORD` (mínimo 8 caracteres). `SESSION_SECRET` se genera solo.
+   - El registro de docentes está cerrado: solo existe esa cuenta. La API la crea al arrancar y, si cambias `ADMIN_PASSWORD` en Render, actualiza la contraseña. Para abrir el registro pon `ALLOW_TEACHER_SIGNUP=true`.
+4. Cuando termine, abre `https://lenguapp-api.onrender.com/api/health` (tu URL puede variar): debe decir `{"ok":true,"db":"mongodb"}`.
+
+### 3. Web en Vercel
+1. En https://vercel.com › *Add New › Project* › importa el repositorio.
+2. **Root Directory:** `web`.
+3. **Environment Variables:** `API_URL` = la URL de Render, sin `/` al final.
+4. Deploy. Si cambias `API_URL`, haz *Redeploy* porque se aplica al compilar.
+
+### 4. Mantenerla despierta
+El plan gratuito de Render duerme la API tras 15 minutos sin visitas (la primera visita tarda unos 50 s en despertar). El archivo `.github/workflows/keepalive.yml` la visita cada 10 minutos en horario escolar. Solo agrega en GitHub el secreto `API_URL` (*Settings › Secrets and variables › Actions › New repository secret*) con la URL de Render.
+
+## Cosas a tener en cuenta
+
+- **Atlas M0 no vence**, pero tiene 512 MB (alcanza para miles de estudiantes) y Atlas pausa los clústeres gratuitos sin conexiones durante 60 días. El keep-alive de GitHub evita eso.
+- **Vercel Hobby es solo para uso no comercial.** Para mostrar el proyecto y usarlo en un colegio como piloto sirve; si se vende, hay que pasar a Pro.
+- **Datos de menores:** solo se guarda nombre, curso y avance. Para un colegio real, acuerden la autorización de tratamiento de datos (Ley 1581 de 2012).

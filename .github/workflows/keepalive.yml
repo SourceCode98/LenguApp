@@ -1,0 +1,12 @@
+# Mantiene despierta la API gratuita de Render (se duerme a los 15 min sin visitas).
+# Configura el secreto API_URL en GitHub: Settings > Secrets and variables > Actions (ej. https://lenguapp-api.onrender.com).
+name: Mantener API despierta
+on:
+  schedule:
+    - cron: '*/10 11-23 * * 1-6'   # cada 10 min, 6 a. m. a 6 p. m. hora de Colombia, lunes a sábado
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS --max-time 90 --retry 2 "${{ secrets.API_URL }}/api/health"

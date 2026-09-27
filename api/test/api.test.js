@@ -1,0 +1,150 @@
+import { test, describe, before, after } from 'node:test';
+import assert from 'node:assert/strict';
+import { createApp, ensureTeacher } from '../src/app.js';
+import { createMemoryStore } from '../src/store-memory.js';
+import { createMongoStore } from '../src/store-mongo.js';
+
+// Con TEST_MONGODB_URI (una base de datos vacía de pruebas) el mismo flujo corre también contra MongoDB.
+const MONGO = process.env.TEST_MONGODB_URI;
+let store;
+
+async function boot() {
+  const app = createApp({ store, secret: 'x'.repeat(40), allowSignup: true });
+  const server = await new Promise((r) => { const s = app.listen(0, () => r(s)); });
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const client = () => {
+    let cookie = '';
+    return async (method, path, body) => {
+      const res = await fetch(base + path, { method, headers: { 'content-type': 'application/json', cookie }, body: body && JSON.stringify(body) });
+      const set = res.headers.get('set-cookie'); if (set) cookie = set.split(';')[0];
+      return { status: res.status, body: await res.json() };
+    };
+  };
+  return { server, client };
+}
+
+for (const kind of MONGO ? ['memory', 'mongodb'] : ['memory']) {
+describe(kind, () => {
+before(async () => { store = kind === 'mongodb' ? await createMongoStore({ uri: MONGO, dbName: 'ql_test_' + Date.now() }) : createMemoryStore(); });
+after(async () => { await store.close?.(); });
+
+test('flujo completo docente y estudiante', async () => {
+  const { server, client } = await boot();
+  try {
+    const t = client();
+    assert.equal((await t('POST', '/api/teacher/register', { name: 'Profe', email: 'p@x.co', password: 'corta' })).status, 400);
+    assert.equal((await t('POST', '/api/teacher/register', { name: 'Profe', email: 'P@x.co', password: 'secreta123' })).status, 201);
+    assert.equal((await t('POST', '/api/teacher/register', { name: 'Otro', email: 'p@x.co', password: 'secreta123' })).status, 409);
+    const cls = (await t('POST', '/api/classes', { name: '10A', grade: 10 })).body.class;
+    assert.match(cls.code, /^[A-Z2-9]{6}$/);
+
+    const s = client();
+    assert.equal((await s('POST', '/api/student/join', { code: 'NOPE00', name: 'Ana', username: 'estrella7', pin: '1234' })).status, 404);
+    // El usuario es obligatorio, válido y distinto al nombre.
+    assert.equal((await s('POST', '/api/student/join', { code: cls.code, name: 'Ána Pérez', pin: '1234' })).status, 400);
+    assert.equal((await s('POST', '/api/student/join', { code: cls.code, name: 'Ána Pérez', username: 'ANA', pin: '1234' })).status, 400);
+    assert.equal((await s('POST', '/api/student/join', { code: cls.code, name: 'Ána Pérez', username: 'ana.perez', pin: '1234' })).status, 400);
+    assert.equal((await s('POST', '/api/student/join', { code: cls.code, name: 'Ána Pérez', username: 'con espacio', pin: '1234' })).status, 400);
+    const j = await s('POST', '/api/student/join', { code: cls.code.toLowerCase(), name: 'Ána Pérez ', username: 'Estrella7', pin: '1234' });
+    assert.deepEqual([j.status, j.body.user.username], [200, 'estrella7']);
+    assert.equal((await s('POST', '/api/classes', { name: 'x', grade: 7 })).status, 401);
+
+    // Hasta que el docente habilite el módulo, el estudiante no puede registrar avance.
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1', act: true })).status, 403);
+    assert.equal((await s('PUT', `/api/classes/${cls.id}/units`, { units: ['g10u1'] })).status, 401);
+    const en = await t('PUT', `/api/classes/${cls.id}/units`, { units: ['g10u1', 'g8u1', 'g10u1', 'falsa'] });
+    assert.deepEqual(en.body.units, ['g10u1']);
+    assert.deepEqual((await s('GET', '/api/me')).body.user.units, ['g10u1']);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u2l1', act: true })).status, 403);
+
+    // Intentos: el docente limita el quiz a 2; la actividad (Practica) no cuenta.
+    assert.deepEqual((await t('PUT', `/api/classes/${cls.id}/limits`, { limits: { quiz: 2, game: 'x', reto: 50, gameMin: 9 } })).body.limits, { quiz: 2, game: 0, reto: 0, gameMin: 2 });
+    assert.deepEqual((await s('GET', '/api/me')).body.user.limits, { quiz: 2, game: 0, reto: 0, gameMin: 2 });
+    // Orden dentro de la lección: Aprende → Practica → Juega → Demuestra.
+    let r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', act: true });
+    assert.equal(r.status, 403);
+    r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', learn: true });
+    assert.deepEqual([r.status, r.body.gained, r.body.record.learn], [200, 0, true]);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1j1', stars: 2 })).status, 403);
+    r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', act: true });
+    assert.equal(r.body.gained, 20);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 2 })).status, 403);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1j1', learn: true })).status, 400);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1j1', stars: 2 })).body.gained, 20);
+    // La lección 2 y el reto esperan a que la 1 termine Demuestra.
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l2', learn: true })).status, 403);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1r', stars: 1 })).status, 403);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 2 })).status, 403);
+    // Cada minijuego pide un mínimo de estrellas (2 por defecto) para abrir Demuestra.
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1j2', stars: 1 })).body.gained, 10);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 2 })).status, 403);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1j2', stars: 2 })).body.gained, 10);
+    r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 2 });
+    assert.equal(r.body.gained, 20);
+    r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 1, act: true });
+    assert.equal(r.body.gained, 0);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 3 })).status, 403);
+    assert.equal((await t('PUT', `/api/classes/${cls.id}/limits`, { limits: { quiz: 0 } })).status, 200);
+    r = await s('POST', '/api/progress', { lessonId: 'g10u1l1', stars: 3 });
+    assert.deepEqual([r.body.gained, r.body.xp, r.body.record.attempts], [10, 90, 3]);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1l2', learn: true })).status, 200);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'g10u1r', stars: 1 })).status, 403);
+    assert.equal((await s('POST', '/api/progress', { lessonId: 'falsa', stars: 3 })).status, 400);
+
+    const me = (await s('GET', '/api/me')).body;
+    assert.equal(me.xp, 90);
+    assert.deepEqual(me.progress.g10u1l1, { stars: 3, act: true, learn: true, attempts: 3 });
+    assert.equal(me.days.length, 1);
+
+    // Al volver entra con usuario y PIN, sin código del curso.
+    const s2 = client();
+    assert.equal((await s2('POST', '/api/student/login', { username: 'estrella7', pin: '9999' })).status, 401);
+    assert.equal((await s2('POST', '/api/student/login', { username: 'nadie', pin: '1234' })).status, 401);
+    const back = await s2('POST', '/api/student/login', { username: ' ESTRELLA7', pin: '1234' });
+    assert.deepEqual([back.status, back.body.user.name, back.body.user.grade], [200, 'Ána Pérez', 10]);
+    assert.equal((await s2('GET', '/api/me')).body.user.username, 'estrella7');
+    // Usuario repetido y nombre repetido en el curso no crean cuentas nuevas.
+    const s3 = client();
+    assert.equal((await s3('POST', '/api/student/join', { code: cls.code, name: 'Luis', username: 'estrella7', pin: '1111' })).status, 409);
+    assert.equal((await s3('POST', '/api/student/join', { code: cls.code, name: 'ana perez', username: 'otra.ana', pin: '1111' })).status, 409);
+    // Tras 5 PIN errados el usuario queda bloqueado un rato.
+    for (let i = 0; i < 5; i++) await s3('POST', '/api/student/login', { username: 'bloq', pin: '0000' });
+    assert.equal((await s3('POST', '/api/student/login', { username: 'bloq', pin: '0000' })).status, 429);
+
+    const detail = (await t('GET', `/api/classes/${cls.id}`)).body;
+    assert.equal(detail.students.length, 1);
+    assert.equal(detail.students[0].xp, 90);
+    assert.deepEqual(detail.class.units, ['g10u1']);
+    const sid = detail.students[0].id;
+    assert.equal((await t('POST', `/api/classes/${cls.id}/students/${sid}/pin`, { pin: '5555' })).status, 200);
+    assert.equal(detail.students[0].username, 'estrella7');
+    assert.equal((await s2('POST', '/api/student/login', { username: 'estrella7', pin: '5555' })).status, 200);
+
+    // Otro docente no ve el curso ajeno.
+    const t2 = client();
+    await t2('POST', '/api/teacher/register', { name: 'B', email: 'b@x.co', password: 'secreta123' });
+    assert.equal((await t2('GET', `/api/classes/${cls.id}`)).status, 404);
+
+    assert.equal((await t('DELETE', `/api/classes/${cls.id}/students/${sid}`)).status, 200);
+    assert.equal((await s('GET', '/api/me')).body.user, null);
+    assert.equal((await t('POST', '/api/logout')).status, 200);
+    assert.equal((await t('GET', '/api/me')).body.user, null);
+    assert.equal((await t('GET', '/api/health')).body.ok, true);
+  } finally { server.close(); }
+});
+
+test('cuenta fija de docente y registro cerrado', async () => {
+  await ensureTeacher(store, { email: 'Diego@X.co', password: 'clave-fija-1', name: 'Diego' });
+  await ensureTeacher(store, { email: 'diego@x.co', password: 'clave-nueva-2' });
+  const app = createApp({ store, secret: 'x'.repeat(40) });
+  const server = await new Promise((r) => { const s = app.listen(0, () => r(s)); });
+  const base = `http://127.0.0.1:${server.address().port}`;
+  const post = (path, body) => fetch(base + path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) }).then((r) => r.status);
+  try {
+    assert.equal(await post('/api/teacher/register', { name: 'X', email: 'x@y.co', password: 'secreta123' }), 403);
+    assert.equal(await post('/api/teacher/login', { email: 'diego@x.co', password: 'clave-fija-1' }), 401);
+    assert.equal(await post('/api/teacher/login', { email: 'diego@x.co', password: 'clave-nueva-2' }), 200);
+  } finally { server.close(); }
+});
+});
+}
