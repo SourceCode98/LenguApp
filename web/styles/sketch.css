@@ -3,7 +3,7 @@
    Se carga al final y solo sobreescribe apariencia (bordes, fondos,
    tipografía de títulos y controles). No cambia el contenido.
    - Claro: papel crema cuadriculado, tinta azul y grafito.
-   - Oscuro: pizarra verde grisácea con trazos de tiza.
+   - Oscuro: gris carbón con trazos claros.
    Los títulos van a mano (Kalam); los controles en letra de
    cuaderno (Patrick Hand); los párrafos siguen en IBM Plex Sans y
    los textos de lectura en Literata, para que se lean bien.
@@ -150,7 +150,7 @@ a.btn{display:inline-flex;align-items:center;justify-content:center}
 .lrow:hover{border-color:var(--gc);background:linear-gradient(90deg,color-mix(in srgb,var(--gc) 10%,var(--surface)),var(--surface) 70%)}
 .lrow .n{border:2px solid var(--gc);border-radius:var(--wob-o);background:transparent;font:700 1.05rem var(--hand)}
 .lrow.done .n{background:color-mix(in srgb,var(--gc) 85%,transparent);color:var(--surface)}
-.stars{color:var(--pen2)}
+.stars{color:var(--muted)}
 .lock-badge{font:400 .95rem var(--pencil);border:1.5px dashed var(--pen2);border-radius:var(--wob-b);background:var(--surface)}
 .plan,.grid-wrap{border:1.5px solid var(--pen2);border-radius:var(--wob-d)}
 th,td{border-bottom-color:var(--line)}
@@ -322,3 +322,44 @@ footer{font-family:var(--pencil);font-size:.98rem}
 @media (max-width:640px){.top{position:relative}}
 html{background-color:var(--bg)}
 body{min-height:100vh;margin:0}
+
+
+/* ---------- modo oscuro (gris carbón): más contraste ---------- */
+:root[data-theme="dark"]{
+    --bg:#121418; --surface:#1C1F26; --surface2:#262A33; --ink:#F4F5F8; --muted:#C5CAD4; --line:#505869;
+    --accent:#BBDAF9; --accent-ink:#13201B; --accent-soft:#263447;
+    --gold:#F6DE92; --gold-soft:#3A3524; --ok:#A8E8BB; --ok-soft:#1D3528; --bad:#FFBCB2; --bad-soft:#452A2C;
+    --pen:rgba(244,245,248,.9); --pen2:rgba(244,245,248,.6); --hatch:rgba(244,245,248,.24);
+    --hl:#F2DA7C; --hl-soft:#F2DA7C; --hl-line:#F2DA7C; --on-hl:#16181D;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+    --bg:#121418; --surface:#1C1F26; --surface2:#262A33; --ink:#F4F5F8; --muted:#C5CAD4; --line:#505869;
+    --accent:#BBDAF9; --accent-ink:#13201B; --accent-soft:#263447;
+    --gold:#F6DE92; --gold-soft:#3A3524; --ok:#A8E8BB; --ok-soft:#1D3528; --bad:#FFBCB2; --bad-soft:#452A2C;
+    --pen:rgba(244,245,248,.9); --pen2:rgba(244,245,248,.6); --hatch:rgba(244,245,248,.24);
+    --hl:#F2DA7C; --hl-soft:#F2DA7C; --hl-line:#F2DA7C; --on-hl:#16181D;
+}}
+:root[data-theme="dark"] .pill[aria-pressed="true"],:root[data-theme="dark"] .tab[aria-selected="true"],:root[data-theme="dark"] .chip[aria-pressed="true"],:root[data-theme="dark"] .bins button[aria-pressed="true"],:root[data-theme="dark"] .ac-opts button[aria-pressed="true"],:root[data-theme="dark"] .juega-tabs button[aria-pressed="true"],:root[data-theme="dark"] .juega-tabs button[aria-pressed="true"] *,:root[data-theme="dark"] .ac-rounds button[aria-current="true"],:root[data-theme="dark"] .ac-piece.in,:root[data-theme="dark"] .ac-piece.in *,:root[data-theme="dark"] .ac-steps span.on,:root[data-theme="dark"] .ac-card[aria-pressed="true"],:root[data-theme="dark"] .seg button[aria-pressed=true],:root[data-theme="dark"] .gm-record,:root[data-theme="dark"] .result,:root[data-theme="dark"] .result *,:root[data-theme="dark"] .bhead .i{color:var(--on-hl)}
+:root[data-theme="dark"] .juega-tabs button[aria-pressed="true"]{box-shadow:3px 3px 0 var(--hatch)}
+@media (hover:hover){:root[data-theme="dark"] .opt:not(:disabled):hover{background:var(--surface2)}}
+@media (hover:hover){:root[data-theme="dark"] .ac-tok:hover{background:rgba(242,218,124,.22)}}
+:root[data-theme="dark"] ::selection{background:#F2DA7C;color:#15201C}
+:root[data-theme="dark"] .lhead h1,:root[data-theme="dark"] .chead h1,:root[data-theme="dark"] .reto-head h1,:root[data-theme="dark"] .bhead h2,:root[data-theme="dark"] .arcade-grade h2{text-decoration-thickness:.12em;text-underline-offset:.14em}
+:root[data-theme="dark"] .lhead h1,:root[data-theme="dark"] .chead h1{--mk:var(--gc)}
+:root[data-theme="dark"] .reto-head h1,:root[data-theme="dark"] .bhead h2,:root[data-theme="dark"] .arcade-grade h2{--mk:rgba(242,218,124,.75)}
+:root[data-theme="dark"] .brand span{background:none;text-decoration:underline;text-decoration-color:rgba(242,218,124,.75);text-decoration-thickness:.12em;text-underline-offset:.16em}
+:root[data-theme="dark"] .bigcode{background:none;text-decoration:underline;text-decoration-color:rgba(242,218,124,.75);text-decoration-thickness:.1em;text-underline-offset:.16em}
+:root[data-theme="dark"] .stars{color:var(--muted)}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) .pill[aria-pressed="true"],:root:not([data-theme="light"]) .tab[aria-selected="true"],:root:not([data-theme="light"]) .chip[aria-pressed="true"],:root:not([data-theme="light"]) .bins button[aria-pressed="true"],:root:not([data-theme="light"]) .ac-opts button[aria-pressed="true"],:root:not([data-theme="light"]) .juega-tabs button[aria-pressed="true"],:root:not([data-theme="light"]) .juega-tabs button[aria-pressed="true"] *,:root:not([data-theme="light"]) .ac-rounds button[aria-current="true"],:root:not([data-theme="light"]) .ac-piece.in,:root:not([data-theme="light"]) .ac-piece.in *,:root:not([data-theme="light"]) .ac-steps span.on,:root:not([data-theme="light"]) .ac-card[aria-pressed="true"],:root:not([data-theme="light"]) .seg button[aria-pressed=true],:root:not([data-theme="light"]) .gm-record,:root:not([data-theme="light"]) .result,:root:not([data-theme="light"]) .result *,:root:not([data-theme="light"]) .bhead .i{color:var(--on-hl)}
+:root:not([data-theme="light"]) .juega-tabs button[aria-pressed="true"]{box-shadow:3px 3px 0 var(--hatch)}
+@media (hover:hover){:root:not([data-theme="light"]) .opt:not(:disabled):hover{background:var(--surface2)}}
+@media (hover:hover){:root:not([data-theme="light"]) .ac-tok:hover{background:rgba(242,218,124,.22)}}
+:root:not([data-theme="light"]) ::selection{background:#F2DA7C;color:#15201C}
+:root:not([data-theme="light"]) .lhead h1,:root:not([data-theme="light"]) .chead h1,:root:not([data-theme="light"]) .reto-head h1,:root:not([data-theme="light"]) .bhead h2,:root:not([data-theme="light"]) .arcade-grade h2{text-decoration-thickness:.12em;text-underline-offset:.14em}
+:root:not([data-theme="light"]) .lhead h1,:root:not([data-theme="light"]) .chead h1{--mk:var(--gc)}
+:root:not([data-theme="light"]) .reto-head h1,:root:not([data-theme="light"]) .bhead h2,:root:not([data-theme="light"]) .arcade-grade h2{--mk:rgba(242,218,124,.75)}
+:root:not([data-theme="light"]) .brand span{background:none;text-decoration:underline;text-decoration-color:rgba(242,218,124,.75);text-decoration-thickness:.12em;text-underline-offset:.16em}
+:root:not([data-theme="light"]) .bigcode{background:none;text-decoration:underline;text-decoration-color:rgba(242,218,124,.75);text-decoration-thickness:.1em;text-underline-offset:.16em}
+:root:not([data-theme="light"]) .stars{color:var(--muted)}
+}
