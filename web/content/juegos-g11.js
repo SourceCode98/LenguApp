@@ -164,7 +164,7 @@ export const LESSON_GAMES_G11 = {
       { q: 'La mejor evidencia para una respuesta está…', o: ['En lo que yo opino', 'En el texto', 'En la opción más larga', 'En el título de la prueba'], a: 1, e: 'Toda respuesta debe apoyarse en el texto.' } ] },
     { game: 'hunter', title: 'Cazador de evidencias', time: 90, rounds: [
       { clue: 'Toca las cifras de préstamos de libros', text: 'En 2020 la biblioteca cerró siete meses y prestó [[9.000]] libros. En 2024 prestó [[61.000]], más que los [[52.000]] de 2019. Muchos creen que ya nadie lee, pero las cifras dicen otra cosa.' },
-      { clue: 'Toca las palabras valorativas', text: 'Una [[multitud]] [[heroica]] llenó la Séptima en una jornada [[inolvidable]], mientras un grupo [[irresponsable]] bloqueaba el paso de los buses.' },
+      { clue: 'Toca las palabras valorativas', text: 'Una multitud [[heroica]] llenó la Séptima en una jornada [[inolvidable]], mientras un grupo [[irresponsable]] bloqueaba el paso de los buses.' },
       { clue: 'Toca las fuentes que cita el texto', text: 'La cifra de 15.000 asistentes la dio [[la Secretaría de Gobierno]]. [[Los organizadores]] hablaron de 30.000 y [[un vocero de TransMilenio]] informó que tres estaciones estuvieron cerradas.' },
       { clue: 'Toca los conectores que anuncian la tesis o la conclusión', text: 'Muchos sueñan con una vida sin esfuerzo. [[Pero]] lo fácil no nos hace crecer. [[Por eso]] conviene aprender a amar la dificultad y, [[en conclusión]], elegir los retos que nos transforman.' } ] },
   ],

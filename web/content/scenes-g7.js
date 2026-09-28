@@ -27,6 +27,7 @@ export const SCENES_G7 = {
     { t: 'Hechos: se pueden comprobar', focus: 'dato', pyramid: false },
     { t: 'Opiniones: valoraciones', focus: 'opinion', pyramid: false },
     { t: 'Separar y buscar la fuente', focus: 'fuente', pyramid: true },
+    { t: 'Confiable, engañosa o falsa', focus: 'titular', pyramid: false, ask: ['quién', 'cuándo', 'dónde'] },
   ] },
   g7u2l1: { type: 'gallery', rooms: [
     { n: 'Narrativo', y: 'Cuento · novela · fábula', c: '#8A4B6E', tags: ['narrador', 'personajes', 'historia'] },
@@ -36,6 +37,11 @@ export const SCENES_G7 = {
     { t: 'Narrativo: alguien cuenta', at: 0 },
     { t: 'Lírico: alguien siente', at: 1 },
     { t: 'Dramático: se representa', at: 2 },
+    { t: 'El verso es solo una forma', at: 0, rooms: [
+      { n: 'Narrativo', y: 'Cuenta una historia', c: '#8A4B6E', tags: ['en prosa', 'o en verso', 'fábula en verso'] },
+      { n: 'Lírico', y: 'Un yo que siente', c: '#2E6F9E', tags: ['yo lírico', 'verso', 'emoción'] },
+      { n: 'Dramático', y: 'Personajes en escena', c: '#B0562F', tags: ['diálogo', 'acotaciones', 'escena'] },
+    ] },
   ] },
   g7u2l2: { type: 'diorama', setting: 'rio', time: 'noche', chars: [{ n: 'Pescador', c: '#8A5A2B', h: 1.3 }, { n: 'Mohán', c: '#2E6B5E', h: 1.8 }], steps: [
     { t: 'La voz que cuenta', view: 'libre', focus: null },
@@ -50,11 +56,26 @@ export const SCENES_G7 = {
     { t: 'La obra y su contexto', at: 0 },
     { t: 'Pombo en la Bogotá del XIX', at: 1 },
     { t: 'Valores de una época', at: 2 },
+    { t: 'La línea de tiempo de Pombo', at: 5, rooms: [
+      { n: 'Independencia', y: '1810', c: '#7A5C2E', tags: ['Grito en Santafé'] },
+      { n: 'Nace Pombo', y: '1833', c: '#8A4B6E', tags: ['Bogotá'] },
+      { n: 'Cuentos pintados', y: '1867', c: '#2E6F9E', tags: ['Nueva York', 'María, de Isaacs'] },
+      { n: 'Tranvía de mulas', y: '1884', c: '#4E7A3A', tags: ['Teatro Colón: 1892'] },
+      { n: 'Mil Días', y: '1899-1902', c: '#9E3B3B', tags: ['guerra civil'] },
+      { n: 'Poeta nacional', y: '1905', c: '#B08A2E', tags: ['Teatro Colón'] },
+    ] },
+    { t: 'Movimientos y obras', at: 0, rooms: [
+      { n: 'Romanticismo', y: 'Mediados del XIX', c: '#8A4B6E', tags: ['emoción', 'naturaleza', 'María (1867)'] },
+      { n: 'Modernismo', y: 'Fines del XIX', c: '#2E6F9E', tags: ['música del verso', 'Nocturno (1894)'] },
+      { n: 'Vanguardias', y: 'Años 20 y 30', c: '#B0562F', tags: ['formas nuevas'] },
+      { n: 'Boom', y: 'Años 60 y 70', c: '#4E7A3A', tags: ['Cien años de soledad (1967)'] },
+    ] },
   ] },
   g7u3l1: { type: 'sentence', subj: ['Las', 'familias', 'bogotanas'], pred: ['recorren', 'la', 'ciclovía'], nuc: { s: 1, p: 0 }, cats: ['art', 'sus', 'adj', 'ver', 'art', 'sus'], steps: [
     { t: 'Sujeto y predicado', show: 'split' },
     { t: 'El núcleo de cada parte', show: 'nuclei' },
     { t: 'Concordancia', show: 'nuclei', subj: ['La', 'familia', 'bogotana'], pred: ['recorre', 'la', 'ciclovía'], plural: false },
+    { t: '¿Quiénes bajan? Los patinadores', show: 'split', subj: ['Los', 'patinadores'], pred: ['bajan', 'por', 'la', 'Séptima'], nuc: { s: 1, p: 0 }, cats: ['art', 'sus', 'ver', 'pre', 'art', 'sus'], plural: true },
   ] },
   g7u3l2: { type: 'sentence', subj: ['Los', 'niños'], pred: ['juegan', 'en', 'la', 'calle'], nuc: { s: 1, p: 0 }, steps: [
     { t: 'Ideas sueltas sin puente', show: 'words', nexo: null, second: null },
