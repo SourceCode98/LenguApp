@@ -3,16 +3,24 @@ export const LESSON_GAMES_G11 = {
 
   // Los clásicos y los temas universales
   g11u1l1: [
-    { game: 'memory', title: 'Obra y tema', pairs: [
-      ['Antígona', 'La ley frente a la conciencia'], ['Edipo rey', 'El destino inevitable'], ['Macbeth', 'La ambición de poder'], ['Romeo y Julieta', 'El amor contra el odio'],
-      ['Poema de Gilgamesh', 'La muerte y la inmortalidad'], ['La vida es sueño', 'Libertad frente al destino'], ['Don Quijote', 'El ideal frente a la realidad'], ['La metamorfosis', 'El rechazo y la deshumanización'] ] },
+    { game: 'emoji', title: '¿Qué clásico es?', time: 90, lives: 3, items: [
+      { e: '🗡️👑🩸', q: '¿Qué obra es?', o: ['Macbeth', 'La Odisea', 'María', 'Rayuela'], a: 0, x: 'Un noble asesina al rey Duncan para quedarse con la corona: el poder.' },
+      { e: '💘👪⚔️👪', q: '¿Qué obra es?', o: ['Hamlet', 'Romeo y Julieta', 'Crimen y castigo', 'Edipo rey'], a: 1, x: 'Dos jóvenes se aman a pesar del odio entre sus familias.' },
+      { e: '⛵🌊🏝️🏠', q: '¿Qué obra es?', o: ['La metamorfosis', 'Antígona', 'La Odisea', 'La vida es sueño'], a: 2, x: 'Homero cuenta el largo regreso de Ulises a casa.' },
+      { e: '🧍➡️🪲😱', q: '¿Qué obra es?', o: ['La metamorfosis', 'Don Quijote', 'Poema de Gilgamesh', 'Macbeth'], a: 0, x: 'Gregorio Samsa amanece convertido en insecto y su familia lo rechaza.' },
+      { e: '🔮🏃👑😵', q: '¿Qué obra es?', o: ['Romeo y Julieta', 'Hamlet', 'Edipo rey', 'María'], a: 2, x: 'Edipo huye de lo que anunció el oráculo y termina cumpliéndolo.' },
+      { e: '🦸⚰️👬♾️', q: '¿Qué obra es?', o: ['Poema de Gilgamesh', 'La Odisea', 'Crimen y castigo', 'Antígona'], a: 0, x: 'El héroe busca la inmortalidad tras la muerte de su amigo Enkidu.' },
+      { e: '⚰️👩⚖️👑', q: '¿Qué obra es?', o: ['Macbeth', 'Antígona', 'La vida es sueño', 'La metamorfosis'], a: 1, x: 'Antígona entierra a su hermano aunque el rey Creonte lo prohibió.' },
+      { e: '🐎🛡️📚💭', q: '¿Qué obra es?', o: ['Hamlet', 'La Odisea', 'Don Quijote', 'Cien años de soledad'], a: 2, x: 'Un hidalgo sale a vivir sus ideales de caballero: el ideal frente a la realidad.' },
+      { e: '🏘️👪🔁⏳', q: '¿Qué obra es?', o: ['María', 'Cien años de soledad', 'Edipo rey', 'Crimen y castigo'], a: 1, x: 'Los Buendía repiten nombres y errores como si estuvieran condenados.' },
+      { e: '🪓😰⛓️', q: '¿Qué obra es?', o: ['Crimen y castigo', 'Romeo y Julieta', 'La metamorfosis', 'Antígona'], a: 0, x: 'Dostoievski cuenta la culpa que sigue a un crimen.' } ] },
     { game: 'truefalse', title: '¿Tema universal?', time: 60, lives: 3, items: [
       { s: 'El poder y sus abusos son un tema universal.', a: true, e: 'Aparece desde Sófocles y Shakespeare hasta El otoño del patriarca.' },
       { s: 'Un tema universal solo interesa a los lectores del país donde se escribió la obra.', a: false, e: 'Lo universal es justamente lo que comparten todas las culturas.' },
       { s: 'Antígona fue escrita por Sófocles.', a: true, e: 'Es una tragedia griega del siglo V a. C.' },
       { s: 'Macbeth es una novela de Cervantes.', a: false, e: 'Es una tragedia de William Shakespeare.' },
       { s: 'El amor imposible une a Romeo y Julieta con Efraín y María.', a: true, e: 'Shakespeare e Isaacs tratan el mismo tema universal en épocas distintas.' },
-      { s: 'El precio del pasaje de bus en 2025 es un tema universal.', a: false, e: 'Es un asunto local y pasajero, no una preocupación humana de todas las épocas.' },
+      { s: 'El precio del pasaje de bus es un tema universal.', a: false, e: 'Es un asunto local y pasajero, no una preocupación humana de todas las épocas.' },
       { s: 'El Poema de Gilgamesh es una de las obras literarias más antiguas que se conocen.', a: true, e: 'Proviene de Mesopotamia, hace unos cuatro mil años.' },
       { s: 'Un clásico deja de tener sentido cuando cambia la época.', a: false, e: 'Un clásico se relee desde cada presente y dice cosas nuevas.' },
       { s: 'En Edipo rey, el protagonista intenta escapar de su destino y termina cumpliéndolo.', a: true, e: 'Esa ironía trágica es el centro de la obra.' },
@@ -21,11 +29,15 @@ export const LESSON_GAMES_G11 = {
 
   // Vanguardias y siglo XX
   g11u1l2: [
-    { game: 'sorter', title: '¿Qué vanguardia es?', bins: ['Futurismo', 'Dadaísmo', 'Surrealismo', 'Nadaísmo'], time: 60, items: [
-      ['Elogio de la velocidad y las máquinas', 0], ['Filippo Tommaso Marinetti', 0], ['Un automóvil de carreras es más bello que una estatua griega', 0], ['Palabras en libertad', 0],
-      ['Poema hecho con recortes de periódico sacados de una bolsa', 1], ['Cabaret Voltaire, Zúrich', 1], ['Tristan Tzara', 1], ['Antiarte y absurdo contra la guerra', 1],
-      ['Escritura automática', 2], ['André Breton', 2], ['El sueño y el inconsciente', 2], ['El juego del cadáver exquisito', 2],
-      ['Gonzalo Arango', 3], ['Medellín, 1958', 3], ['Jotamario Arbeláez', 3], ['Provocar a la sociedad conservadora colombiana', 3] ] },
+    { game: 'sopa', title: 'Sopa de vanguardias', time: 180, words: [
+      { w: 'futurismo', h: 'Amaba la velocidad y las máquinas' },
+      { w: 'dadaísmo', h: 'Nació en el Cabaret Voltaire de Zúrich' },
+      { w: 'Breton', h: 'Escribió el primer manifiesto del surrealismo' },
+      { w: 'nadaísmo', h: 'Lo fundó Gonzalo Arango en Medellín' },
+      { w: 'antiarte', h: 'Lo que proponía Dadá contra el arte serio' },
+      { w: 'manifiesto', h: 'Texto con que nacía cada vanguardia' },
+      { w: 'vanguardia', h: 'Movimiento que rompe con la tradición' },
+      { w: 'boom', h: 'Auge de la novela latinoamericana' } ] },
     { game: 'order', title: 'Ordena el siglo XX', time: 90, rounds: [
       { prompt: 'Ordena las vanguardias de la más antigua a la más reciente', items: ['Futurismo', 'Dadaísmo', 'Surrealismo', 'Nadaísmo'], labels: ['1909', '1916', '1924', '1958'] },
       { prompt: 'Ordena estos hitos de la literatura colombiana', items: ['La vorágine, de José Eustasio Rivera', 'Revista Los Nuevos', 'Primer manifiesto nadaísta', 'Cien años de soledad', 'Nobel de Literatura a García Márquez'], labels: ['1924', '1925', '1958', '1967', '1982'] },
@@ -34,40 +46,38 @@ export const LESSON_GAMES_G11 = {
 
   // El lector que elige
   g11u1l3: [
-    { game: 'truefalse', title: '¿Buena estrategia de lectura?', time: 60, lives: 3, items: [
-      { s: 'Definir para qué voy a leer antes de empezar.', a: true, e: 'El propósito orienta la atención y la estrategia.' },
-      { s: 'Subrayar todo el texto para no perder nada.', a: false, e: 'Si todo está subrayado, nada se destaca: hay que seleccionar.' },
-      { s: 'Releer el párrafo que no entendí.', a: true, e: 'Releer es una estrategia de control de la comprensión.' },
-      { s: 'Saltarme las palabras desconocidas y nunca buscarlas.', a: false, e: 'Conviene deducirlas por el contexto o buscarlas cuando son clave.' },
-      { s: 'Hacerme preguntas mientras leo.', a: true, e: 'Preguntar mantiene activa la lectura.' },
-      { s: 'Leer siempre el mismo tipo de libro.', a: false, e: 'Variar géneros amplía el vocabulario y la mirada.' },
-      { s: 'Resumir con mis palabras al terminar.', a: true, e: 'Resumir muestra si entendí lo esencial.' },
-      { s: 'Leer con el celular sonando cada minuto.', a: false, e: 'Las interrupciones rompen la concentración.' },
-      { s: 'Predecir de qué trata un libro por el título y la contraportada.', a: true, e: 'Predecir activa lo que ya sé y crea expectativas.' },
-      { s: 'Conversar sobre el libro en un club de lectura.', a: true, e: 'Compartir la lectura profundiza la interpretación.' } ] },
-    { game: 'blitz', title: 'Estrategias de lectura', time: 60, lives: 3, items: [
-      { q: 'Hojear un libro antes de leerlo es una estrategia…', o: ['Antes de leer', 'Durante la lectura', 'Después de leer', 'Inútil'], a: 0, e: 'Es una prelectura.' },
-      { q: 'Anotar preguntas al margen ocurre…', o: ['Antes de leer', 'Durante la lectura', 'Después de leer', 'Nunca'], a: 1, e: 'Se hace mientras se lee.' },
-      { q: 'Escribir una reseña es una estrategia…', o: ['Antes de leer', 'Durante la lectura', 'Después de leer', 'De prelectura'], a: 2, e: 'Se hace al terminar el texto.' },
-      { q: '"¿Qué dice el texto?" corresponde al nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Creativo'], a: 0, e: 'El nivel literal recupera lo que está escrito.' },
-      { q: '"¿Qué da a entender el autor?" corresponde al nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Visual'], a: 1, e: 'Inferir es deducir lo que no está dicho de forma directa.' },
-      { q: '"¿Estoy de acuerdo y por qué?" corresponde al nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Fonético'], a: 2, e: 'El nivel crítico valora el texto con razones.' },
-      { q: '¿Qué es un plan lector?', o: ['Una lista de lecturas con propósito, tiempos y lugares', 'Un examen de lectura', 'Un resumen de un libro', 'Un club obligatorio'], a: 0, e: 'Organiza qué leer, para qué y cuándo.' },
-      { q: 'BibloRed es…', o: ['Una editorial', 'La red de bibliotecas públicas de Bogotá', 'Una librería en línea', 'Un premio literario'], a: 1, e: 'Presta libros gratis y ofrece clubes de lectura.' },
-      { q: 'Si no entiendo un párrafo, lo mejor es…', o: ['Abandonar el libro', 'Releerlo y buscar las palabras clave', 'Saltarme el capítulo', 'Leer más rápido'], a: 1, e: 'Releer y aclarar el vocabulario resuelve la mayoría de dudas.' } ] },
+    { game: 'crucigrama', title: 'Crucigrama del lector', time: 240, words: [
+      { w: 'propósito', h: 'Lo que defines antes de leer: para qué lees' },
+      { w: 'predecir', h: 'Adivinar de qué trata el libro por el título y la contraportada' },
+      { w: 'subrayar', h: 'Marcar solo lo esencial mientras lees' },
+      { w: 'releer', h: 'Volver a leer lo difícil' },
+      { w: 'reseña', h: 'Texto corto que escribes después de leer' },
+      { w: 'literal', h: 'Nivel de lectura: qué dice el texto' },
+      { w: 'inferencial', h: 'Nivel de lectura: qué da a entender' },
+      { w: 'crítico', h: 'Nivel de lectura: qué pienso yo y con qué razones' } ] },
+    { game: 'catcher', title: 'Atrapa las buenas estrategias', rule: 'Atrapa solo las buenas estrategias de lectura; deja pasar las malas', time: 45, lives: 3,
+      good: ['Definir para qué leo', 'Predecir por la contraportada', 'Subrayar solo lo esencial', 'Anotar preguntas al margen', 'Releer lo difícil', 'Decirlo con mis palabras', 'Resumir al terminar', 'Comentar en un club de lectura'],
+      bad: ['Subrayar todo el texto', 'Leer con el celular sonando', 'Saltarme las palabras clave', 'Leer solo lo que dice el algoritmo', 'Nunca releer', 'Leer siempre el mismo género'] },
   ],
 
   // Tipos de argumentos
   g11u2l1: [
-    { game: 'sorter', title: 'Clasifica el argumento', bins: ['Autoridad', 'Causa', 'Analogía', 'Datos', 'Ejemplo'], time: 75, items: [
-      ['Según la Organización Mundial de la Salud, fumar causa cáncer de pulmón', 0], ['Como explica un neurólogo, el sueño consolida lo que aprendemos', 0],
-      ['Si trasnochas, al otro día rindes menos', 1], ['Como no hubo mantenimiento, el puente se deterioró', 1],
-      ['El colegio es como un equipo: si uno no juega, pierden todos', 2], ['Leer es al cerebro lo que el ejercicio es al cuerpo', 2],
-      ['El 45 % de los estudiantes del curso usa el celular más de seis horas al día, según la encuesta', 3], ['La biblioteca pasó de 9.000 a 61.000 préstamos en cuatro años', 3],
-      ['Mi vecina aprendió inglés con series subtituladas', 4], ['El año pasado, el curso que hizo huerta escolar mejoró en ciencias', 4] ] },
-    { game: 'memory', title: 'Tipo y ejemplo', pairs: [
-      ['Autoridad', '"Según el IDEAM…"'], ['Datos', '"El 70 % del agua viene de Chingaza"'], ['Causa', '"Sin lluvias, bajan los embalses"'], ['Analogía', '"El páramo es como una esponja"'],
-      ['Ejemplo', '"En mi casa reutilizamos el agua"'], ['Tesis', 'La idea que se defiende'], ['Contraargumento', 'La razón del otro lado'], ['Refutación', 'La respuesta al contraargumento'] ] },
+    { game: 'conecta', title: 'Une tipo y ejemplo', time: 120, pairs: [
+      ['Autoridad', '"Según el IDEAM, El Niño reduce las lluvias"'], ['Causa', '"Como no llovió, bajaron los embalses"'],
+      ['Analogía', '"El páramo es como una esponja"'], ['Datos', '"Chingaza aporta cerca del 70 % del agua"'],
+      ['Ejemplo', '"En mi edificio reutilizamos el agua de la lavadora"'], ['Tesis', 'La idea que se defiende'],
+      ['Argumento', 'Una razón que apoya la tesis'], ['Contraargumento', 'La razón del otro lado'],
+      ['Refutación', 'La respuesta al contraargumento'] ] },
+    { game: 'blitz', title: '¿Qué tipo de argumento?', time: 75, lives: 3, items: [
+      { q: '"Como explica un neurólogo, el sueño consolida lo que aprendemos."', o: ['Autoridad', 'Analogía', 'Ejemplo', 'Datos'], a: 0, e: 'Su fuerza está en quién lo dice: un experto.' },
+      { q: '"Si trasnochas, al otro día rindes menos."', o: ['Datos', 'Causa', 'Autoridad', 'Ejemplo'], a: 1, e: 'Muestra que un hecho produce otro.' },
+      { q: '"Leer es al cerebro lo que el ejercicio es al cuerpo."', o: ['Causa', 'Datos', 'Analogía', 'Autoridad'], a: 2, e: 'Compara con un caso parecido.' },
+      { q: '"El 45 % del curso usa el celular más de seis horas al día, según la encuesta."', o: ['Ejemplo', 'Autoridad', 'Causa', 'Datos'], a: 3, e: 'Su fuerza está en la cifra, aunque diga de dónde salió.' },
+      { q: '"Mi vecina aprendió inglés con series subtituladas."', o: ['Ejemplo', 'Datos', 'Analogía', 'Autoridad'], a: 0, e: 'Es un caso concreto.' },
+      { q: '"Como no hubo mantenimiento, el puente se deterioró."', o: ['Analogía', 'Causa', 'Ejemplo', 'Datos'], a: 1, e: 'Relación de causa y efecto.' },
+      { q: '"El colegio es como un equipo: si uno no juega, pierden todos."', o: ['Datos', 'Autoridad', 'Analogía', 'Causa'], a: 2, e: 'Compara el colegio con un equipo.' },
+      { q: 'Un famoso opina de salud sin pruebas. Su argumento pesa…', o: ['Mucho', 'Poco', 'Igual que un experto', 'Más que un dato'], a: 1, e: 'Fama no es saber: no es pertinente ni verificable.' },
+      { q: 'Una analogía solo convence si…', o: ['Es muy larga', 'Los casos se parecen de verdad', 'La dice un famoso', 'Tiene una cifra'], a: 1, e: 'Si los casos no se parecen, la comparación se cae.' } ] },
   ],
 
   // Las falacias
@@ -84,18 +94,21 @@ export const LESSON_GAMES_G11 = {
       { s: 'Según el IDEAM, El Niño reduce las lluvias en la región andina; conviene ahorrar agua.', ok: true, e: 'Autoridad experta y pertinente: argumento válido.' },
       { s: 'Tras cambiar las llaves, el colegio redujo su consumo de agua en un 20 %; vale la pena hacerlo en todas las sedes.', ok: true, e: 'Se apoya en un dato medido y pertinente.' },
       { s: 'Piensa en los niños que llorarán si no apoyas mi propuesta.', ok: false, f: 'Apelación a la emoción', e: 'Busca conmover en lugar de dar razones.' } ] },
-    { game: 'catcher', title: 'Atrapa las falacias', rule: 'Atrapa solo las falacias; deja pasar los argumentos válidos', time: 45, lives: 3,
-      good: ['Ni lo escuches: es un niño', 'O estás conmigo o contra mí', 'Todos lo dicen, debe ser cierto', 'Un gamer faltó: los gamers son vagos', 'Si cedemos en esto, lo perderemos todo', 'Mi rival quiere acabar con la diversión', 'Un cantante famoso dice que ese té cura el cáncer', 'Desde que usas ese buzo perdemos los partidos'],
-      bad: ['Según la OMS, fumar causa cáncer de pulmón', 'La encuesta a 500 estudiantes muestra que prefieren almuerzo caliente', 'Como llovió toda la noche, la cancha está encharcada', 'El informe técnico dice que el puente falló por falta de mantenimiento', 'El manual de convivencia prohíbe esa sanción', 'La biblioteca abre hasta las 8: hay tiempo de estudiar'] },
+    { game: 'emoji', title: 'Falacias en emojis', time: 90, lives: 3, items: [
+      { e: '🎯🧍🚫💡', q: '¿Qué falacia es?', o: ['Ad hominem', 'Falsa causa', 'Apelación a la mayoría', 'Falso dilema'], a: 0, x: 'Apunta a la persona, no a su idea.' },
+      { e: '🌾🧍🥊', q: '¿Qué falacia es?', o: ['Pendiente resbaladiza', 'Hombre de paja', 'Pregunta compleja', 'Ad hominem'], a: 1, x: 'Arma un muñeco de paja con lo que el otro no dijo y le pega.' },
+      { e: '🚪🚪🤷', q: '¿Qué falacia es?', o: ['Generalización apresurada', 'Apelación a la emoción', 'Falso dilema', 'Falsa causa'], a: 2, x: 'Solo muestra dos puertas cuando hay más.' },
+      { e: '⛷️⬇️⬇️💥', q: '¿Qué falacia es?', o: ['Apelación a la autoridad', 'Hombre de paja', 'Ad hominem', 'Pendiente resbaladiza'], a: 3, x: 'Una cadena de desastres cuesta abajo, sin pruebas.' },
+      { e: '👥👥👥👍✅', q: '¿Qué falacia es?', o: ['Apelación a la mayoría', 'Falso dilema', 'Pregunta compleja', 'Falsa causa'], a: 0, x: '"Todos lo creen, entonces es verdad."' },
+      { e: '👕⚽😭', q: '¿Qué falacia es?', o: ['Ad hominem', 'Falsa causa', 'Generalización apresurada', 'Apelación a la mayoría'], a: 1, x: '"Desde que usas ese buzo perdemos los partidos."' },
+      { e: '1️⃣🧍➡️👥👥👥', q: '¿Qué falacia es?', o: ['Pendiente resbaladiza', 'Hombre de paja', 'Generalización apresurada', 'Apelación a la emoción'], a: 2, x: 'De un solo caso saca una regla para todos.' },
+      { e: '🎤⭐💊', q: '¿Qué falacia es?', o: ['Falsa causa', 'Falso dilema', 'Pregunta compleja', 'Apelación a la autoridad'], a: 3, x: 'Un cantante famoso opina de medicina: no es experto.' },
+      { e: '😭🐶💔', q: '¿Qué falacia es?', o: ['Apelación a la emoción', 'Ad hominem', 'Apelación a la mayoría', 'Hombre de paja'], a: 0, x: 'Busca conmover en vez de dar razones.' },
+      { e: '❓🔗😳', q: '¿Qué falacia es?', o: ['Generalización apresurada', 'Pregunta compleja', 'Pendiente resbaladiza', 'Apelación a la autoridad'], a: 1, x: '"¿Ya dejaste de copiarte?" da por probada la acusación.' } ] },
   ],
 
   // El ensayo argumentativo
   g11u2l3: [
-    { game: 'order', title: 'Ordena el ensayo', time: 90, rounds: [
-      { prompt: 'Ordena las partes de un ensayo argumentativo', items: ['Introducción con la tesis', 'Primer argumento', 'Segundo argumento', 'Tercer argumento', 'Contraargumento y refutación', 'Conclusión', 'Referencias'] },
-      { prompt: 'Ordena los párrafos del ensayo sobre la IA en el colegio', items: ['La IA ya está en el celular de cada estudiante: este ensayo sostiene que el colegio debe enseñar a usarla.', 'En primer lugar, prohibirla no evita que se use; solo la esconde.', 'Además, la UNESCO (2023) recomienda formar criterio en lugar de vetarla.', 'Sin embargo, hay quienes temen que nos haga dejar de pensar; no obstante, eso depende de cómo se use.', 'En conclusión, la escuela necesita reglas claras, no prohibiciones.'] },
-      { prompt: 'Ordena los elementos de una referencia en formato APA', items: ['Apellido, Inicial.', '(Año).', 'Título de la obra en cursiva.', 'Editorial.'] },
-      { prompt: 'Ordena el razonamiento de un párrafo argumentativo', items: ['Idea principal del párrafo', 'Argumento que la sostiene', 'Evidencia o cita', 'Cierre que la conecta con la tesis'] } ] },
     { game: 'puente', title: 'Conectores argumentativos', time: 90, lives: 3, items: [
       { a: 'La IA explica un tema de muchas formas distintas', b: 'sirve para repasar antes de un examen', o: ['por eso', 'aunque', 'en cambio'], k: 0, e: '"Por eso" introduce una consecuencia.' },
       { a: 'La IA ayuda a redactar', b: 'a veces inventa datos y fuentes', o: ['por lo tanto', 'sin embargo', 'es decir'], k: 1, e: '"Sin embargo" marca una oposición.' },
@@ -106,24 +119,25 @@ export const LESSON_GAMES_G11 = {
       { a: 'Las herramientas de IA tienen sesgos', b: 'pueden repetir estereotipos sobre algunas regiones', o: ['por ejemplo', 'sin embargo', 'en conclusión'], k: 0, e: '"Por ejemplo" ilustra la idea anterior con un caso.' },
       { a: 'Muchos temen que la IA reemplace al docente', b: 'ninguna máquina acompaña a un estudiante como un buen profesor', o: ['por lo tanto', 'no obstante', 'además'], k: 1, e: '"No obstante" introduce una refutación.' },
       { a: 'Prohibir la IA no evita que se use', b: 'es mejor enseñar reglas claras', o: ['aunque', 'por ejemplo', 'en consecuencia'], k: 2, e: '"En consecuencia" presenta la conclusión.' } ] },
+    { game: 'corrector', title: 'Corrige el ensayo', time: 150, lives: 3, rounds: [
+      { text: 'La IA ya está en el celular de cada estudiante. {{Por eso|Sin embargo}}, el colegio debe enseñar a usarla. {{Además|En cambio}}, la UNESCO (2023) recomienda formar criterio en lugar de prohibirla.', e: '"Por eso" marca consecuencia y "además" suma una razón en la misma dirección.' },
+      { text: 'Hay quienes temen que la IA nos haga dejar de pensar. {{Sin embargo|Por lo tanto}}, eso depende de cómo se use. {{Por ejemplo|En conclusión}}, un profesor puede usarla para dar retroalimentación. {{En conclusión|En primer lugar}}, la escuela necesita reglas claras.', e: 'Oposición para refutar, ejemplo para ilustrar y cierre al final.' },
+      { text: 'En APA, la cita lleva autor y {{año|página}}: (UNESCO, 2023). Las referencias van en orden {{alfabético|de importancia}} y el título del libro va en {{cursiva|mayúsculas}}.', e: 'Autor y año en el texto; referencias en orden alfabético y título en cursiva.' },
+      { text: 'La tesis se presenta en la {{introducción|conclusión}}. El contraargumento suele ir {{antes|después}} de la conclusión. La conclusión {{retoma|copia}} la tesis sin repetirla palabra por palabra.', e: 'Tesis al inicio, contraargumento antes del cierre y conclusión que retoma sin copiar.' } ] },
   ],
 
   // Leer textos filosóficos
   g11u3l1: [
-    { game: 'blitz', title: 'Contrarreloj filosófico', time: 60, lives: 3, items: [
-      { q: 'La pregunta de fondo que mueve un texto filosófico es…', o: ['La tesis', 'El problema', 'El ejemplo', 'La conclusión'], a: 1, e: 'El problema es la pregunta; la tesis, la respuesta.' },
-      { q: '"Pienso, luego existo" es de…', o: ['Platón', 'Descartes', 'Kant', 'Zuleta'], a: 1, e: 'René Descartes, en el Discurso del método (1637).' },
-      { q: 'La alegoría de la caverna aparece en La República, de…', o: ['Aristóteles', 'Sócrates', 'Platón', 'Nietzsche'], a: 2, e: 'Platón la usa para explicar el paso de la ignorancia al conocimiento.' },
-      { q: '"¡Atrévete a saber!" fue el lema de la Ilustración según…', o: ['Kant', 'Descartes', 'Rousseau', 'Hegel'], a: 0, e: 'Kant lo propone en "¿Qué es la Ilustración?" (1784).' },
-      { q: 'Estanislao Zuleta nació en…', o: ['Bogotá', 'Cali', 'Medellín', 'Cartagena'], a: 2, e: 'Nació en Medellín en 1935.' },
-      { q: 'En "Elogio de la dificultad", Zuleta critica…', o: ['El deseo de una vida sin obstáculos', 'La lectura de novelas', 'El trabajo en equipo', 'La educación pública'], a: 0, e: 'Sostiene que desear la facilidad es renunciar a pensar.' },
-      { q: '"Pero en realidad…" suele anunciar…', o: ['Un ejemplo', 'La postura del autor', 'Un dato numérico', 'El título'], a: 1, e: 'Los marcadores de contraste suelen introducir la tesis.' },
-      { q: 'Aristóteles definió al ser humano como un…', o: ['Animal político', 'Lobo para el hombre', 'Junco pensante', 'Ser para la muerte'], a: 0, e: 'Lo afirma en la Política: vivimos en comunidad.' },
-      { q: 'Un ejemplo en un texto filosófico sirve para…', o: ['Plantear el problema', 'Ilustrar y apoyar la tesis', 'Reemplazar la tesis', 'Distraer al lector'], a: 1, e: 'Hace concreta una idea abstracta.' } ] },
     { game: 'sorter', title: '¿Tesis, problema o ejemplo?', bins: ['Tesis', 'Problema', 'Ejemplo'], time: 60, items: [
-      ['La libertad exige hacerse responsable de lo que uno elige', 0], ['Solo conocemos el mundo a través de sentidos que pueden engañarnos', 0], ['Desobedecer una ley injusta puede ser un deber moral', 0], ['Una vida sin examen no merece ser vivida', 0],
-      ['¿Es la libertad hacer lo que uno quiera?', 1], ['¿Podemos conocer la realidad tal como es?', 1], ['¿Es justo obedecer una ley injusta?', 1], ['¿Qué hace que una vida valga la pena?', 1],
-      ['Un remo parece doblado dentro del agua aunque esté recto', 2], ['Antígona desobedece a Creonte para enterrar a su hermano', 2], ['Quien pasa el día viendo series también está eligiendo', 2], ['El estudiante que copia evita el esfuerzo pero no aprende', 2] ] },
+      ['La libertad exige hacerse responsable de lo que uno elige', 0], ['Solo conocemos el mundo a través de sentidos que pueden engañarnos', 0], ['Desobedecer una ley injusta puede ser un deber moral', 0], ['Desear que todo sea fácil es renunciar a pensar', 0],
+      ['¿Es la libertad hacer lo que uno quiera?', 1], ['¿Podemos conocer la realidad tal como es?', 1], ['¿Es justo obedecer una ley injusta?', 1], ['¿Por qué soñamos con una vida sin obstáculos?', 1],
+      ['Un remo parece doblado dentro del agua aunque esté recto', 2], ['Antígona desobedece a Creonte para enterrar a su hermano', 2], ['Quien aprende a tocar guitarra no pide que desaparezcan las cuerdas', 2], ['El estudiante que copia evita el esfuerzo pero no aprende', 2] ] },
+    { game: 'conecta', title: 'Filósofos y conceptos', time: 120, pairs: [
+      ['Platón', 'La alegoría de la caverna'], ['Aristóteles', 'El ser humano es un animal político'],
+      ['Descartes', '"Pienso, luego existo"'], ['Kant', '"¡Atrévete a saber!"'],
+      ['Zuleta', 'Elogio de la dificultad'], ['Problema', 'La pregunta de fondo'],
+      ['Tesis', 'La respuesta del autor'], ['Argumento', 'Razón general que apoya la tesis'],
+      ['Ejemplo', 'Caso concreto que ilustra una idea'] ] },
   ],
 
   // Medios, poder y ciudadanía
@@ -137,63 +151,64 @@ export const LESSON_GAMES_G11 = {
       { head: 'TransMilenio cerrará tres estaciones de la Séptima de 2:00 a 6:00 p. m.', src: 'Cuenta oficial de TransMilenio', date: 'Jueves', clues: [{ t: 'Cuenta oficial verificada', bad: false }, { t: 'Da horas y estaciones concretas', bad: false }], a: 0, e: 'Fuente oficial y datos precisos que se pueden comprobar.' },
       { head: 'Estudio demuestra que las marchas no sirven para nada', src: 'Blog anónimo', date: 'Sin fecha', clues: [{ t: 'No dice quién hizo el estudio', bad: true }, { t: 'El estudio no aparece en ninguna revista ni universidad', bad: true }, { t: 'Generaliza sobre todas las marchas', bad: true }], a: 2, e: 'El supuesto estudio no existe: la noticia es falsa.' },
       { head: 'Caos total: la ciudad colapsa por la marcha', src: 'Noticiero de televisión', date: 'Jueves', text: 'En el cuerpo de la nota se informa que la movilidad se afectó durante 40 minutos en dos calles.', clues: [{ t: 'El titular no coincide con el cuerpo', bad: true }, { t: 'El dato de 40 minutos es verificable', bad: false }], a: 1, e: 'El titular exagera lo que el mismo texto informa.' } ] },
-    { game: 'truefalse', title: '¿Informa o manipula?', time: 60, lives: 3, items: [
-      { s: 'Usar "vándalos" para referirse a todos los manifestantes es neutral.', a: false, e: 'Es una palabra valorativa que generaliza.' },
-      { s: 'Citar fuentes de las dos partes ayuda a informar con equilibrio.', a: true, e: 'Da la voz a distintas miradas del hecho.' },
-      { s: 'Una foto real puede usarse para engañar si se saca de contexto.', a: true, e: 'Una imagen de otro lugar o fecha cambia el sentido de la noticia.' },
-      { s: 'Si un titular exagera, pero el texto es correcto, no hay ningún problema.', a: false, e: 'Mucha gente solo lee el titular: la exageración desinforma.' },
-      { s: 'Dar una cifra con su fuente permite verificar la información.', a: true, e: 'Se puede contrastar con otras fuentes.' },
-      { s: 'Omitir un dato importante también es una forma de sesgo.', a: true, e: 'Lo que se calla también construye el enfoque.' },
-      { s: 'Un medio de opinión y un medio informativo cumplen la misma función.', a: false, e: 'La opinión valora; la información presenta hechos verificables.' },
-      { s: 'Saber quién es el dueño de un medio ayuda a leerlo críticamente.', a: true, e: 'Los intereses del dueño pueden influir en el enfoque.' },
-      { s: 'Si muchas cuentas comparten una noticia, ya está verificada.', a: false, e: 'La viralidad no es verificación.' },
-      { s: 'Comparar tres medios sobre el mismo hecho ayuda a acercarse a lo que pasó.', a: true, e: 'El contraste revela datos comunes y sesgos de cada uno.' } ] },
+    { game: 'hunter', title: 'Cazador en la noticia', time: 90, rounds: [
+      { clue: 'Toca las palabras valorativas', text: 'Una multitud [[heroica]] llenó la Séptima en una jornada [[inolvidable]], mientras un grupo [[irresponsable]] bloqueaba el paso de los buses durante dos horas.' },
+      { clue: 'Toca las fuentes que cita el texto', text: 'La cifra de 15.000 asistentes la dio [[la Secretaría de Gobierno]]. [[Los organizadores]] hablaron de 30.000 y [[un vocero de TransMilenio]] informó que tres estaciones estuvieron cerradas.' },
+      { clue: 'Toca los datos verificables', text: 'Unas [[15.000 personas]] marcharon el [[jueves]] por la [[carrera Séptima]]. Fue una tarde hermosa y la marcha terminó a las [[5:00 p. m.]] en la [[Plaza de Bolívar]].' } ] },
   ],
 
   // Simulacro integrador
   g11u3l3: [
-    { game: 'blitz', title: 'Simulacro contrarreloj', time: 90, lives: 3, items: [
-      { q: '¿Cuántas opciones tiene cada pregunta de Lectura Crítica en Saber 11?', o: ['Tres', 'Cuatro', 'Cinco', 'Seis'], a: 1, e: 'Cuatro opciones (A, B, C y D), una sola correcta.' },
-      { q: 'Una infografía es un texto…', o: ['Continuo', 'Discontinuo', 'Narrativo', 'Lírico'], a: 1, e: 'Organiza la información en gráficos, íconos y cifras.' },
-      { q: '"Según el texto, ¿en qué año…?" es una pregunta de nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Creativo'], a: 0, e: 'Pide recuperar un dato explícito.' },
-      { q: '"¿Qué función cumple el segundo párrafo?" evalúa…', o: ['Identificar un dato', 'Comprender cómo se articulan las partes', 'La ortografía', 'La opinión del lector'], a: 1, e: 'Pregunta por la relación entre las partes del texto.' },
-      { q: '"¿Cuál es la intención del autor al usar la palabra imperdonable?" es de nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Gramatical'], a: 2, e: 'Evalúa la postura y los recursos del autor.' },
-      { q: 'Una opción que dice más de lo que dice el texto es…', o: ['La correcta', 'Una trampa que hay que descartar', 'Siempre la más larga', 'Una inferencia válida'], a: 1, e: 'Las opciones que exageran o generalizan suelen ser incorrectas.' },
-      { q: 'Antes de responder sobre una tabla, lo primero es leer…', o: ['Solo la última fila', 'El título, los encabezados y las unidades', 'La pregunta siguiente', 'Nada, se adivina'], a: 1, e: 'Sin el título y las unidades se malinterpretan las cifras.' },
-      { q: '"Los préstamos subieron de 52.000 a 61.000." Esto es…', o: ['Un dato', 'Una opinión', 'Una hipótesis', 'Una falacia'], a: 0, e: 'Es una información verificable en la tabla.' },
-      { q: 'La mejor evidencia para una respuesta está…', o: ['En lo que yo opino', 'En el texto', 'En la opción más larga', 'En el título de la prueba'], a: 1, e: 'Toda respuesta debe apoyarse en el texto.' } ] },
-    { game: 'hunter', title: 'Cazador de evidencias', time: 90, rounds: [
-      { clue: 'Toca las cifras de préstamos de libros', text: 'En 2020 la biblioteca cerró siete meses y prestó [[9.000]] libros. En 2024 prestó [[61.000]], más que los [[52.000]] de 2019. Muchos creen que ya nadie lee, pero las cifras dicen otra cosa.' },
-      { clue: 'Toca las palabras valorativas', text: 'Una multitud [[heroica]] llenó la Séptima en una jornada [[inolvidable]], mientras un grupo [[irresponsable]] bloqueaba el paso de los buses.' },
-      { clue: 'Toca las fuentes que cita el texto', text: 'La cifra de 15.000 asistentes la dio [[la Secretaría de Gobierno]]. [[Los organizadores]] hablaron de 30.000 y [[un vocero de TransMilenio]] informó que tres estaciones estuvieron cerradas.' },
-      { clue: 'Toca los conectores que anuncian la tesis o la conclusión', text: 'Muchos sueñan con una vida sin esfuerzo. [[Pero]] lo fácil no nos hace crecer. [[Por eso]] conviene aprender a amar la dificultad y, [[en conclusión]], elegir los retos que nos transforman.' } ] },
+    { game: 'rosco', title: 'El rosco de Saber 11', time: 240, items: [
+      { l: 'A', q: 'Empieza por A: quien escribe el texto y tiene una postura', a: 'autor' },
+      { l: 'C', q: 'Empieza por C: nivel de lectura que evalúa la intención y la postura del autor', a: 'crítico' },
+      { l: 'D', q: 'Empieza por D: información verificable que el texto dice directamente', a: 'dato' },
+      { l: 'E', q: 'Empieza por E: lo que buscas en el texto para apoyar tu respuesta', a: 'evidencia' },
+      { l: 'F', q: 'Contiene la F: texto discontinuo con gráficos, íconos y cifras', a: 'infografía' },
+      { l: 'I', q: 'Empieza por I: nivel de lectura que comprende cómo se articulan las partes', a: 'inferencial' },
+      { l: 'L', q: 'Empieza por L: nivel de lectura que identifica lo que dice el texto', a: 'literal' },
+      { l: 'M', q: 'Empieza por M: las preguntas son de selección ___ con única respuesta', a: 'múltiple' },
+      { l: 'N', q: 'Contiene la N: lo que se deduce de los datos ("todo indica que...")', a: 'conclusión' },
+      { l: 'O', q: 'Empieza por O: valora los hechos, como "sería un error imperdonable"', a: 'opinión' },
+      { l: 'P', q: 'Empieza por P: lo primero que conviene leer antes de volver al texto', a: 'pregunta' },
+      { l: 'S', q: 'Empieza por S: prueba del ICFES que presentan los estudiantes de once', a: 'saber', alt: ['saber 11', 'saber once'] },
+      { l: 'T', q: 'Empieza por T: texto discontinuo organizado en filas y columnas', a: 'tabla' },
+      { l: 'U', q: 'Empieza por U: se leen junto al título y los encabezados antes de las cifras', a: 'unidades' },
+      { l: 'V', q: 'Empieza por V: tipo de palabra que juzga, como "imperdonable"', a: 'valorativa' } ] },
+    { game: 'catcher', title: 'Atrapa las opiniones', rule: 'Atrapa solo las opiniones; deja pasar los datos', time: 45, lives: 3,
+      good: ['Sería un error imperdonable', 'Ningún gasto es tan valioso', 'Fue la marcha más bonita', 'Es el mejor libro del siglo', 'Esa biblioteca es una joya', 'Recortar es una vergüenza'],
+      bad: ['En 2024 se prestaron 61.000 libros', 'En 2020 la biblioteca cerró siete meses', 'La marcha terminó a las 5:00 p. m.', 'Cada pregunta tiene cuatro opciones', 'En 2019 hubo 52.000 préstamos', 'La sala juvenil tiene tres clubes'] },
   ],
 };
 
 export const UNIT_GAMES_G11 = {
-  g11u1: { game: 'memory', title: 'Parejas de la literatura universal', pairs: [
+  g11u1: { game: 'memory', title: 'Parejas de la literatura y la lectura', pairs: [
     ['Antígona', 'Sófocles'], ['Hamlet', 'William Shakespeare'], ['Don Quijote de la Mancha', 'Miguel de Cervantes'], ['La metamorfosis', 'Franz Kafka'],
-    ['Crimen y castigo', 'Fiódor Dostoievski'], ['La Odisea', 'Homero'], ['Cien años de soledad', 'Gabriel García Márquez'], ['Manifiesto del surrealismo', 'André Breton'],
-    ['La vorágine', 'José Eustasio Rivera'] ] },
-  g11u2: { game: 'duelo', title: 'Duelo final de argumentos', lives: 3, time: 120, items: [
-    { s: 'Ese científico es ateo, así que su estudio sobre el clima no vale nada.', ok: false, f: 'Ad hominem', e: 'Descalifica a la persona, no al estudio.' },
-    { s: 'O apoyas el paro o estás a favor de la corrupción.', ok: false, f: 'Falso dilema', e: 'Se puede rechazar la corrupción sin apoyar el paro.' },
-    { s: 'Conocí a dos bogotanos groseros: los rolos son maleducados.', ok: false, f: 'Generalización apresurada', e: 'Dos casos no representan a millones de personas.' },
-    { s: 'Millones de personas ven ese reality, así que debe ser un buen programa.', ok: false, f: 'Apelación a la mayoría', e: 'La popularidad no prueba la calidad.' },
-    { s: 'Me puse la camiseta de la suerte y ganó Millonarios: la camiseta funciona.', ok: false, f: 'Falsa causa', e: 'La coincidencia no es causa.' },
-    { s: 'Si legalizan las patinetas eléctricas, luego legalizarán las motos en los andenes y habrá muertos cada día.', ok: false, f: 'Pendiente resbaladiza', e: 'Supone una cadena de consecuencias sin pruebas.' },
-    { s: 'Quienes defienden la jornada única quieren tener a los niños encerrados todo el día.', ok: false, f: 'Hombre de paja', e: 'Caricaturiza la postura contraria.' },
-    { s: 'Un futbolista famoso dice que ese banco es el más seguro del país.', ok: false, f: 'Apelación a la autoridad', e: 'Un futbolista no es autoridad en finanzas.' },
-    { s: 'Si no donas hoy, esos perritos pasarán la noche solos y con frío.', ok: false, f: 'Apelación a la emoción', e: 'Conmueve en vez de argumentar.' },
-    { s: 'Según el Ministerio de Salud, la vacuna redujo las hospitalizaciones; vacunarse es una decisión sensata.', ok: true, e: 'Autoridad pertinente con evidencia.' },
-    { s: 'Tres encuestas independientes muestran que los estudiantes duermen menos de siete horas; conviene revisar la hora de entrada.', ok: true, e: 'Datos de varias fuentes que apoyan la conclusión.' },
-    { s: 'Como el río bajó su caudal por la sequía, el acueducto pidió ahorrar agua.', ok: true, e: 'Relación causal comprobable.' } ] },
+    ['Futurismo', 'Marinetti, 1909'], ['Surrealismo', 'André Breton, 1924'], ['Nadaísmo', 'Gonzalo Arango, 1958'],
+    ['Plan lector', 'Lecturas con propósito, tiempos y lugares'], ['Nivel inferencial', 'Lo que el texto da a entender'] ] },
+  g11u2: { game: 'rosco', title: 'El rosco de la argumentación', time: 240, items: [
+    { l: 'A', q: 'Empieza por A: argumento que compara con un caso parecido', a: 'analogía' },
+    { l: 'C', q: 'Empieza por C: la mejor razón del otro lado', a: 'contraargumento' },
+    { l: 'D', q: 'Empieza por D: argumento que usa cifras verificables', a: 'datos' },
+    { l: 'E', q: 'Empieza por E: argumento que presenta un caso concreto', a: 'ejemplo' },
+    { l: 'F', q: 'Empieza por F: razonamiento que parece válido pero no lo es', a: 'falacia' },
+    { l: 'G', q: 'Empieza por G: ___ apresurada, sacar una regla de uno o dos casos', a: 'generalización' },
+    { l: 'H', q: 'Empieza por H: ___ de paja, deformar lo que dijo el otro', a: 'hombre' },
+    { l: 'I', q: 'Empieza por I: parte del ensayo donde se presenta la tesis', a: 'introducción' },
+    { l: 'M', q: 'Empieza por M: apelación a la ___, creer algo porque muchos lo creen', a: 'mayoría' },
+    { l: 'O', q: 'Empieza por O: conector de oposición: "no ___"', a: 'obstante' },
+    { l: 'P', q: 'Empieza por P: ___ resbaladiza, una cadena de desastres sin pruebas', a: 'pendiente' },
+    { l: 'R', q: 'Empieza por R: la respuesta al contraargumento', a: 'refutación' },
+    { l: 'T', q: 'Empieza por T: la idea que defiende un ensayo', a: 'tesis' },
+    { l: 'U', q: 'Contiene la U: parte final del ensayo que retoma la tesis', a: 'conclusión' } ] },
   g11u3: { game: 'blitz', title: 'Simulacro contrarreloj', time: 120, lives: 3, quizFrom: 'unit', extraItems: [
     { q: 'La competencia "reflexionar a partir de un texto y evaluar su contenido" corresponde al nivel…', o: ['Literal', 'Inferencial', 'Crítico', 'Ortográfico'], a: 2, e: 'Evaluar el contenido y la postura es el nivel crítico.' },
     { q: '"Desear que todo sea fácil es desear dejar de pensar." En el texto de Zuleta, esta idea es…', o: ['El problema', 'La tesis', 'Un ejemplo', 'Un dato'], a: 1, e: 'Es la postura que el autor defiende.' },
     { q: 'Un medio llama "marea valiente" a los manifestantes. Esa expresión es…', o: ['Un dato verificable', 'Una valoración', 'Una fuente', 'Una cifra oficial'], a: 1, e: 'Es lenguaje cargado que juzga el hecho.' },
     { q: 'En una tabla, 2019: 52.000 y 2024: 61.000. ¿Cuánto aumentaron los préstamos?', o: ['9.000', '11.000', '19.000', '52.000'], a: 0, e: '61.000 − 52.000 = 9.000.' },
-    { q: 'Un cómic es un texto…', o: ['Continuo', 'Discontinuo', 'Filosófico', 'Argumentativo'], a: 1, e: 'Combina viñetas, imágenes y texto en un orden no lineal.' },
+    { q: 'Un cómic es un texto…', o: ['Continuo', 'Discontinuo', 'Filosófico', 'Argumentativo'], a: 1, e: 'Combina viñetas, imágenes y texto.' },
     { q: 'La opción que "dice algo distinto de lo que dice el texto" se debe…', o: ['Elegir', 'Descartar', 'Marcar dos veces', 'Dejar para el final'], a: 1, e: 'Toda respuesta debe tener evidencia en el texto.' },
-    { q: 'Para contrastar una noticia sobre una marcha lo mejor es…', o: ['Leer un solo medio', 'Comparar varios medios y fuentes oficiales', 'Ver solo los comentarios', 'Confiar en el titular'], a: 1, e: 'El contraste reduce el sesgo de un solo enfoque.' } ] },
+    { q: 'Para contrastar una noticia sobre una marcha lo mejor es…', o: ['Leer un solo medio', 'Comparar varios medios y fuentes oficiales', 'Ver solo los comentarios', 'Confiar en el titular'], a: 1, e: 'El contraste reduce el sesgo de un solo enfoque.' },
+    { q: '"Pienso, luego existo" es de…', o: ['Platón', 'Descartes', 'Kant', 'Zuleta'], a: 1, e: 'René Descartes, Discurso del método (1637).' },
+    { q: 'Una cadena que pide reenviar "antes de que lo borren", sin fuente ni fecha, es…', o: ['Confiable', 'Engañosa', 'Falsa', 'Oficial'], a: 2, e: 'Es un invento: no tiene fuente ni fecha.' } ] },
 };

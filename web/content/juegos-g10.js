@@ -3,41 +3,42 @@ export const LESSON_GAMES_G10 = {
 
   // Edad Media y Siglo de Oro
   g10u1l1: [
+    { game: 'emoji', title: 'Emojiadivina del Siglo de Oro', time: 90, lives: 3, items: [
+      { e: '📚😵‍💫🐴🛡️', q: '¿Qué obra es?', o: ['Cantar de mio Cid', 'Don Quijote de la Mancha', 'Lazarillo de Tormes', 'La Celestina'], a: 1, x: 'Un hidalgo enloquece de tanto leer libros de caballerías y sale a caballo como caballero andante.' },
+      { e: '🎤🏰⚔️🐎', q: '¿Quién recitaba estas historias de héroes?', o: ['El místico', 'El pícaro', 'El juglar', 'El relator'], a: 2, x: 'Los juglares recitaban cantares de gesta, como el Cid, en plazas y castillos.' },
+      { e: '👦🍞👨‍🦯', q: '¿Qué obra es?', o: ['Lazarillo de Tormes', 'La vida es sueño', 'Fuenteovejuna', 'Noche oscura'], a: 0, x: 'Lázaro, un niño pobre, sirve a un ciego y sobrevive con trucos: nace la novela picaresca.' },
+      { e: '😴👑❓', q: '¿Qué obra es?', o: ['Coplas por la muerte de su padre', 'Don Quijote', 'Cantar de mio Cid', 'La vida es sueño'], a: 3, x: 'Calderón pregunta si lo que vivimos es real o un sueño.' },
+      { e: '🌹➡️💀', q: '¿Qué idea de época muestra?', o: ['La armonía renacentista', 'El desengaño barroco', 'La épica medieval', 'La mística'], a: 1, x: 'La belleza termina en polvo: la vida es breve y engañosa.' },
+      { e: '🇮🇹📜1️⃣4️⃣', q: '¿Qué forma adaptó Garcilaso?', o: ['El soneto italiano', 'El cantar de gesta', 'La novela picaresca', 'El romance'], a: 0, x: 'Garcilaso trajo el soneto: 14 versos endecasílabos.' },
+      { e: '🙏🌙❤️', q: '¿Qué autor es?', o: ['Lope de Vega', 'Fernando de Rojas', 'Jorge Manrique', 'San Juan de la Cruz'], a: 3, x: 'En Noche oscura, el alma busca unirse con Dios: poesía mística.' },
+      { e: '⚓⚔️✋', q: '¿Qué batalla marcó la vida de Cervantes?', o: ['Boyacá', 'Lepanto', 'Ayacucho', 'Waterloo'], a: 1, x: 'En Lepanto (1571) quedó herido de la mano izquierda.' },
+      { e: '⚖️🏛️🌿', q: '¿Qué época es?', o: ['Edad Media', 'Barroco', 'Renacimiento', 'Romanticismo'], a: 2, x: 'Armonía, cultura grecolatina y naturaleza idealizada.' },
+      { e: '👴⚰️⏳', q: '¿Qué obra es?', o: ['Coplas por la muerte de su padre', 'La Celestina', 'Lazarillo de Tormes', 'Fuenteovejuna'], a: 0, x: 'Manrique escribe a la muerte de su padre y a lo breve de la vida.' } ] },
     { game: 'order', title: 'Ordena en el tiempo', time: 90, rounds: [
       { prompt: 'Ordena las obras de la más antigua a la más reciente', items: ['Cantar de mio Cid', 'La Celestina', 'Lazarillo de Tormes', 'Don Quijote (primera parte)', 'La vida es sueño'], labels: ['Hacia 1200', '1499', '1554', '1605', '1635'] },
       { prompt: 'Ordena las épocas', items: ['Edad Media', 'Renacimiento', 'Barroco'], labels: ['Siglos XII-XV', 'Siglo XVI', 'Siglo XVII'] },
       { prompt: 'Ordena los autores por su fecha de nacimiento', items: ['Jorge Manrique', 'Garcilaso de la Vega', 'Miguel de Cervantes', 'Lope de Vega', 'Pedro Calderón de la Barca'], labels: ['Hacia 1440', 'Hacia 1500', '1547', '1562', '1600'] },
       { prompt: 'Ordena la vida de Cervantes', items: ['Nace en Alcalá de Henares', 'Queda herido de la mano izquierda en Lepanto', 'Pasa cinco años cautivo en Argel', 'Publica la primera parte del Quijote', 'Publica la segunda parte del Quijote'], labels: ['1547', '1571', '1575-1580', '1605', '1615'] } ] },
-    { game: 'memory', title: 'Autor y obra', pairs: [
-      ['Cantar de mio Cid', 'Anónimo'], ['Coplas por la muerte de su padre', 'Jorge Manrique'], ['La Celestina', 'Fernando de Rojas'], ['Églogas y sonetos', 'Garcilaso de la Vega'],
-      ['Noche oscura', 'San Juan de la Cruz'], ['Don Quijote de la Mancha', 'Miguel de Cervantes'], ['Fuenteovejuna', 'Lope de Vega'], ['La vida es sueño', 'Calderón de la Barca'] ] },
   ],
 
   // Del Romanticismo a la Generación del 27
   g10u1l2: [
-    { game: 'sorter', title: '¿Qué movimiento es?', bins: ['Romanticismo', 'Realismo', 'Modernismo', 'Generación del 27'], time: 75, items: [
-      ['Rimas, de Bécquer', 0], ['Don Juan Tenorio, de Zorrilla', 0], ['Un yo que sufre por un amor imposible bajo la luna', 0],
-      ['Fortunata y Jacinta, de Galdós', 1], ['La Regenta, de Clarín', 1], ['Un narrador que observa la sociedad con detalle', 1],
-      ['Azul..., de Rubén Darío', 2], ['Nocturno, de José Asunción Silva', 2], ['Versos musicales con cisnes y mundos exóticos', 2],
-      ['Romancero gitano, de Lorca', 3], ['Marinero en tierra, de Alberti', 3], ['Homenaje a Góngora en 1927', 3] ] },
-    { game: 'word', title: 'Palabra secreta: movimientos', lives: 6, count: 6, words: [
-      { w: 'ROMANTICISMO', h: 'Movimiento del yo, la emoción y la libertad (primera mitad del siglo XIX).' },
-      { w: 'REALISMO', h: 'Movimiento que retrata la sociedad con detalle y sin idealizarla.' },
-      { w: 'MODERNISMO', h: 'Movimiento de Rubén Darío y Silva que busca la música del verso.' },
-      { w: 'VANGUARDIA', h: 'Arte que rompe con la tradición y experimenta con la forma.' },
-      { w: 'NATURALISMO', h: 'Realismo extremo que explica a los personajes por la herencia y el medio.' },
-      { w: 'BÉCQUER', h: 'Autor sevillano de las Rimas y las Leyendas.' },
-      { w: 'GALDÓS', h: 'Novelista realista de Fortunata y Jacinta.' },
-      { w: 'LORCA', h: 'Poeta granadino del Romancero gitano.' },
-      { w: 'ROMANCERO', h: 'Colección de romances, como la que publicó Lorca en 1928.' } ] },
+    { game: 'sopa', title: 'Sopa de movimientos', size: 12, time: 180, words: [
+      { w: 'Bécquer', h: 'Poeta sevillano de las Rimas' },
+      { w: 'Isaacs', h: 'Colombiano autor de María (1867)' },
+      { w: 'Galdós', h: 'Novelista realista de Fortunata y Jacinta' },
+      { w: 'Realismo', h: 'Retrata la sociedad sin idealizarla' },
+      { w: 'Darío', h: 'Rubén, autor de Azul... (1888)' },
+      { w: 'Modernismo', h: 'Movimiento que busca la musicalidad del verso' },
+      { w: 'Romance', h: 'Forma popular que la Generación del 27 unió a la vanguardia' },
+      { w: 'Lorca', h: 'Poeta granadino del Romancero gitano' } ] },
+    { game: 'conecta', title: 'Autor y obra', time: 120, pairs: [
+      ['Bécquer', 'Rimas'], ['Espronceda', 'Canción del pirata'], ['Zorrilla', 'Don Juan Tenorio'], ['Jorge Isaacs', 'María'], ['Galdós', 'Fortunata y Jacinta'],
+      ['Clarín', 'La Regenta'], ['Rubén Darío', 'Azul...'], ['José Asunción Silva', 'Nocturno'], ['Alberti', 'Marinero en tierra'], ['Lorca', 'Romancero gitano'] ] },
   ],
 
   // Literatura y pintura
   g10u1l3: [
-    { game: 'memory', title: 'Pintura y poema', pairs: [
-      ['Las meninas (Velázquez)', 'La vida es sueño (Calderón)'], ['Guernica (Picasso)', 'Guerra Civil española'], ['Salvador Dalí', 'Amigo de Lorca en Madrid'],
-      ['El sueño de la razón (Goya)', 'Lo nocturno romántico'], ['El Greco', 'Espiritualidad del siglo XVI'], ['Fernando Botero', 'Versiones de Velázquez'],
-      ['Surrealismo', 'Sueños e imágenes irracionales'], ['Barroco', 'Contraste de luz y sombra'] ] },
     { game: 'truefalse', title: '¿Misma época?', time: 60, lives: 3, items: [
       { s: 'Velázquez y Cervantes vivieron en el Siglo de Oro.', a: true, e: 'Cervantes murió en 1616; Velázquez nació en 1599.' },
       { s: 'Picasso pintó el Guernica cuando Garcilaso escribía sus sonetos.', a: false, e: 'Garcilaso es del siglo XVI; el Guernica es de 1937.' },
@@ -49,6 +50,15 @@ export const LESSON_GAMES_G10 = {
       { s: 'El Cantar de mio Cid y Las meninas son del mismo siglo.', a: false, e: 'El Cantar es de hacia 1200; Las meninas, del siglo XVII.' },
       { s: 'Isaacs publicó María cuando el Romanticismo seguía vivo en Hispanoamérica.', a: true, e: 'María es de 1867, obra cumbre del Romanticismo hispanoamericano.' },
       { s: 'Rubén Darío y Picasso fueron contemporáneos.', a: true, e: 'Darío murió en 1916, cuando Picasso ya era un pintor reconocido.' } ] },
+    { game: 'crucigrama', title: 'Crucigrama de pintores', time: 240, words: [
+      { w: 'Greco', h: 'El ___: pintor de Toledo de figuras alargadas' },
+      { w: 'Velázquez', h: 'Pintor de Las meninas' },
+      { w: 'Goya', h: 'Pintó El sueño de la razón produce monstruos' },
+      { w: 'Picasso', h: 'Pintó el Guernica' },
+      { w: 'Dalí', h: 'Pintor surrealista, amigo de Lorca' },
+      { w: 'Guernica', h: 'Pintura sobre un bombardeo de la Guerra Civil' },
+      { w: 'claroscuro', h: 'Contraste fuerte de luz y sombra del Barroco' },
+      { w: 'surrealismo', h: 'Movimiento que busca los sueños y lo irracional' } ] },
   ],
 
   // Los tres niveles de lectura
@@ -76,17 +86,22 @@ export const LESSON_GAMES_G10 = {
       { q: '¿Cuál de estos es un texto discontinuo?', o: ['Un cuento', 'Una carta', 'La tabla de posiciones de la Liga colombiana', 'Un ensayo'], a: 2, e: 'La tabla organiza datos en filas y columnas: no se lee de corrido.' },
       { q: 'Gráfica: inscritos en 2023: 200; en 2024: 250; en 2025: 300. ¿Qué se puede inferir?', o: ['Bajan cada año', 'Aumentan 50 cada año', 'Se duplican cada año', 'No cambian'], a: 1, e: 'La diferencia entre un año y otro es siempre de 50.' },
       { q: '¿Qué conviene revisar primero para saber si una infografía es confiable?', o: ['Los colores', 'El tamaño de la letra', 'La fuente y la fecha de los datos', 'Cuántas veces se compartió'], a: 2, e: 'La fuente y la fecha permiten verificar la información.' } ] },
-    { game: 'truefalse', title: '¿Lo dice la gráfica?', time: 75, lives: 3, items: [
-      { s: 'Tabla: a pie 45 %, bus 30 %, bicicleta 15 %, carro 10 %. Más de la mitad llega a pie.', a: false, e: '45 % es el grupo más grande, pero no llega a la mitad.' },
-      { s: 'Misma tabla: la bicicleta supera al carro.', a: true, e: '15 % es más que 10 %.' },
-      { s: 'Gráfica: en abril llovieron 120 mm y en julio 40 mm. En abril llovió el triple que en julio.', a: true, e: '120 es tres veces 40.' },
-      { s: 'Misma gráfica: julio fue el mes más seco del año.', a: false, e: 'La gráfica solo muestra dos meses: no permite hablar de todo el año.' },
-      { s: 'Una infografía sin fuente ni fecha se puede citar en un trabajo sin verificarla.', a: false, e: 'Sin fuente ni fecha, los datos no se pueden comprobar.' },
-      { s: 'Caricatura: un funcionario corta la cinta de un puente sin terminar. El caricaturista critica que se inauguren obras incompletas.', a: true, e: 'La imagen exagera una situación para opinar sobre ella.' },
-      { s: 'Gráfica: 250 inscritos en 2024 y 300 en 2025. Los inscritos aumentaron un 20 %.', a: true, e: '50 es el 20 % de 250.' },
-      { s: 'Encuesta a 40 estudiantes de un curso: sus resultados representan a todos los jóvenes de Colombia.', a: false, e: 'Una muestra tan pequeña y particular no permite generalizar.' },
-      { s: 'Barras de 100 y 110 con el eje desde 95: la segunda cantidad es el doble de la primera.', a: false, e: 'Solo aumentó un 10 %; el eje recortado engaña a la vista.' },
-      { s: 'Mapa con convenciones (azul: ríos; verde: parques): para leerlo hay que mirar las convenciones.', a: true, e: 'Las convenciones explican qué significa cada color.' } ] },
+    { game: 'rosco', title: 'El rosco de las gráficas', time: 200, items: [
+      { l: 'A', q: 'Empieza por A: subida que, en porcentaje, se calcula sobre el valor inicial', a: 'aumento' },
+      { l: 'C', q: 'Empieza por C: dibujo con palabras que opina con humor y exageración', a: 'caricatura' },
+      { l: 'D', q: 'Empieza por D: texto que se lee saltando entre sus partes, como una tabla', a: 'discontinuo' },
+      { l: 'E', q: 'Empieza por E: línea de la gráfica que, si no empieza en cero, exagera las diferencias', a: 'eje' },
+      { l: 'F', q: 'Empieza por F: de dónde salen los datos; se revisa primero', a: 'fuente' },
+      { l: 'G', q: 'Empieza por G: texto discontinuo con barras, líneas o tortas', a: 'gráfica' },
+      { l: 'H', q: 'Empieza por H: texto discontinuo con las horas de salida de un bus', a: 'horario' },
+      { l: 'I', q: 'Empieza por I: decir lo contrario de lo que se piensa, recurso de la caricatura', a: 'ironía' },
+      { l: 'L', q: 'Empieza por L: otro nombre de las convenciones que explican colores y símbolos', a: 'leyenda' },
+      { l: 'M', q: 'Empieza por M: grupo encuestado; si es pequeño, no representa a todos', a: 'muestra' },
+      { l: 'O', q: 'Contiene la O: texto que se lee de corrido, en párrafos', a: 'continuo' },
+      { l: 'P', q: 'Empieza por P: parte de cada cien', a: 'porcentaje' },
+      { l: 'T', q: 'Empieza por T: hacia dónde van los datos: suben, bajan o se mantienen', a: 'tendencia' },
+      { l: 'U', q: 'Contiene la U: el 25 % es una ___ parte', a: 'cuarta' },
+      { l: 'X', q: 'Contiene la X: recurso de la caricatura que agranda los rasgos', a: 'exageración' } ] },
   ],
 
   // Intención y postura del autor
@@ -110,66 +125,79 @@ export const LESSON_GAMES_G10 = {
 
   // La reseña crítica
   g10u3l1: [
-    { game: 'order', title: 'Ordena la reseña', time: 90, rounds: [
-      { prompt: 'Ordena las partes de una reseña crítica', items: ['Ficha técnica', 'Resumen', 'Valoración argumentada', 'Recomendación'] },
-      { prompt: 'Ordena esta reseña de "María", de Jorge Isaacs', items: ['María, Jorge Isaacs, 1867. Novela.', 'Efraín regresa a la hacienda de su familia y se enamora de su prima María.', 'Sus descripciones del paisaje son su mayor acierto, aunque hoy el ritmo puede parecer lento.', 'Se la recomiendo a quien quiera entender el Romanticismo colombiano.'], labels: ['Ficha', 'Resumen', 'Valoración', 'Recomendación'] },
-      { prompt: 'Ordena los pasos para escribir una reseña', items: ['Leer o ver la obra con atención y tomar notas', 'Completar la ficha técnica', 'Escribir el resumen sin contar el final', 'Escribir la valoración con criterios y ejemplos', 'Revisar y corregir'] } ] },
-    { game: 'sorter', title: '¿Resumen o valoración?', bins: ['Resumen', 'Valoración'], time: 60, items: [
-      ['La película narra el regreso de un médico a Medellín.', 0], ['La protagonista viaja a la costa para buscar a su hermano.', 0], ['El libro reúne doce cuentos sobre la vida en un barrio de Cali.', 0], ['La historia transcurre durante un verano en Cartagena.', 0], ['El narrador es un niño que cuenta la historia de su familia.', 0],
-      ['La fotografía es el mayor acierto de la película.', 1], ['El final se siente apresurado y deja cabos sueltos.', 1], ['Los diálogos suenan naturales y muy colombianos.', 1], ['Es una novela imprescindible para entender la época.', 1], ['El ritmo decae a mitad del libro.', 1] ] },
+    { game: 'hunter', title: 'Cazador en la reseña', time: 90, rounds: [
+      { clue: 'Toca las frases de valoración: juicios sobre la obra', text: 'La película narra el regreso de un médico a Medellín. [[La fotografía es su mayor acierto]]. El protagonista enfrenta amenazas por defender los derechos humanos. [[El final se siente apresurado]].' },
+      { clue: 'Toca los datos de la ficha técnica', text: '[[María]], novela de [[Jorge Isaacs]] publicada en [[1867]], cuenta un amor imposible en el Valle del Cauca. Su paisaje es lo mejor del libro.' },
+      { clue: 'Toca lo que no debe ir en el resumen: juicios o el final', text: 'Efraín regresa a la hacienda de su familia y se enamora de su prima María. [[La novela es aburridísima]]. Él viaja a Londres a estudiar y [[al final María muere]].' },
+      { clue: 'Toca los criterios que usa el reseñista', text: 'Me convenció por [[los personajes]], que cambian a lo largo de la historia, y por [[la fotografía]], llena de contrastes. [[El lenguaje]] es sencillo y [[la estructura]] salta en el tiempo sin confundir.' } ] },
+    { game: 'conecta', title: 'Partes de la reseña', time: 120, pairs: [
+      ['Ficha técnica', 'El olvido que seremos, Fernando Trueba, 2020'], ['Resumen', 'Un médico de Medellín defiende los derechos humanos'],
+      ['Valoración', 'La fotografía es el mayor acierto'], ['Recomendación', 'Para quien quiera entender los años ochenta'],
+      ['Criterio', 'Los personajes, el lenguaje o la estructura'], ['Ejemplo de la obra', 'La escena del hospital'],
+      ['Resumen objetivo', 'Tercera persona, presente y sin juicios'], ['Spoiler', 'Revelar el final en el resumen'],
+      ['Valoración débil', '"Me encantó, es lo mejor"'], ['Revisión', 'Tildes, concordancia y puntuación'] ] },
   ],
 
   // La ponencia y la relatoría
   g10u3l2: [
-    { game: 'truefalse', title: '¿Buena práctica oral?', time: 60, lives: 3, items: [
-      { s: 'Leer todas las diapositivas palabra por palabra.', a: false, e: 'Las diapositivas apoyan; la ponencia se dice, no se lee.' },
-      { s: 'Mirar al público y repartir la mirada por todo el auditorio.', a: true, e: 'El contacto visual mantiene la atención.' },
-      { s: 'Hacer una pausa antes de una idea importante.', a: true, e: 'La pausa prepara al público y da énfasis.' },
-      { s: 'Pasarse del tiempo asignado porque el tema es interesante.', a: false, e: 'Respetar el tiempo es respetar a los demás ponentes.' },
-      { s: 'Presentar el tema y el propósito al comenzar.', a: true, e: 'La introducción orienta al público.' },
-      { s: 'Llenar cada diapositiva con párrafos largos.', a: false, e: 'Pocas palabras, imágenes y gráficas funcionan mejor.' },
-      { s: 'Cerrar retomando la tesis y abrir espacio para preguntas.', a: true, e: 'La conclusión da unidad y las preguntas abren el diálogo.' },
-      { s: 'En la relatoría, cambiar lo que dijo un ponente si uno no está de acuerdo.', a: false, e: 'La relatoría es fiel; la opinión del relator va aparte y señalada.' },
-      { s: 'Hablar hacia el tablero, de espaldas al público.', a: false, e: 'Se pierde el volumen y la conexión con el auditorio.' },
-      { s: 'Ensayar en voz alta y cronometrar la exposición.', a: true, e: 'Ensayar permite ajustar el tiempo y el ritmo.' } ] },
-    { game: 'order', title: 'Estructura de la ponencia', time: 90, rounds: [
-      { prompt: 'Ordena las partes de la ponencia', items: ['Saludo y presentación', 'Introducción: tema y propósito', 'Desarrollo: ideas con datos y ejemplos', 'Conclusión: se retoma la tesis', 'Preguntas del público'] },
-      { prompt: 'Ordena esta ponencia sobre la biblioteca del barrio', items: ['Buenos días. Soy Laura Gómez, de grado décimo.', 'Hoy quiero demostrar que la biblioteca del barrio es un derecho, no un lujo.', 'Primero, es el único lugar con internet gratis de la zona.', 'Segundo, sus talleres de lectura reúnen a niños y abuelos cada sábado.', 'Por eso, defender la biblioteca es defender a la comunidad. Quedo atenta a sus preguntas.'] },
-      { prompt: 'Ordena el trabajo del relator', items: ['Escuchar y tomar notas de cada ponente', 'Anotar las preguntas y los acuerdos', 'Redactar la síntesis fiel de la sesión', 'Agregar al final una reflexión propia señalada como tal', 'Leer o entregar la relatoría'] } ] },
+    { game: 'builder', title: 'Arma la ponencia', time: 150, targets: [
+      { prompt: 'Arma la estructura de la ponencia', pieces: ['Saludo', 'Introducción', 'Desarrollo', 'Conclusión', 'Preguntas'], answers: [['Saludo', 'Introducción', 'Desarrollo', 'Conclusión', 'Preguntas']] },
+      { prompt: 'Arma la introducción: tema y tesis', pieces: ['Hoy quiero demostrar', 'que la biblioteca del barrio', 'es un derecho,', 'no un lujo.'], answers: [['Hoy quiero demostrar', 'que la biblioteca del barrio', 'es un derecho,', 'no un lujo.']] },
+      { prompt: 'Arma la conclusión: retoma la tesis y abre las preguntas', pieces: ['Por eso,', 'defender la biblioteca', 'es defender a la comunidad.', 'Quedo atenta', 'a sus preguntas.'], answers: [['Por eso,', 'defender la biblioteca', 'es defender a la comunidad.', 'Quedo atenta', 'a sus preguntas.']] },
+      { prompt: 'Ordena el trabajo del relator', pieces: ['Escuchar y tomar notas', 'Anotar preguntas y acuerdos', 'Redactar la síntesis', 'Leer o entregar la relatoría'], answers: [['Escuchar y tomar notas', 'Anotar preguntas y acuerdos', 'Redactar la síntesis', 'Leer o entregar la relatoría']] },
+      { prompt: 'Arma una frase de relatoría fiel (sobran piezas)', pieces: ['La ponente', 'sostuvo que', 'la biblioteca', 'es un derecho.', 'Yo creo que', 'exagera.'], answers: [['La ponente', 'sostuvo que', 'la biblioteca', 'es un derecho.']] } ] },
+    { game: 'crucigrama', title: 'Crucigrama de la ponencia', time: 240, words: [
+      { w: 'ponencia', h: 'Exposición oral formal ante un público académico' },
+      { w: 'relatoría', h: 'Síntesis fiel de lo que se dijo en una sesión' },
+      { w: 'tesis', h: 'Idea central que la conclusión retoma' },
+      { w: 'pausa', h: 'Silencio breve que destaca una idea' },
+      { w: 'ensayar', h: 'Practicar en voz alta y cronometrarse antes del evento' },
+      { w: 'volumen', h: 'Qué tan fuerte se habla' },
+      { w: 'foro', h: 'Evento académico donde se presentan ponencias' },
+      { w: 'conclusión', h: 'Parte final de la ponencia' } ] },
   ],
 
   // Revisar y corregir
   g10u3l3: [
-    { game: 'hunter', title: 'Cazador de errores', time: 90, rounds: [
-      { clue: 'Toca las palabras con error de tilde en el menú', text: 'Hoy [[tenémos]] sancocho, [[arróz]] con coco y jugo de [[maracuya]]. Pregunte por el [[menu]] del día.' },
-      { clue: 'Toca los errores de concordancia', text: 'Los resultados de la encuesta [[fue publicado]] ayer. Las calles del centro están [[sucio]] y los andenes, [[rota]]. [[Hubieron]] muchas quejas.' },
-      { clue: 'Toca las palabras mal escritas en el aviso', text: 'Se [[bende]] lote junto a la vía. [[Aber]] si se anima: [[hay]] le dejo el número. [[Llamé]] ya.' },
-      { clue: 'Toca las palabras a las que les falta la tilde diacrítica', text: 'Pregúntale a Juan si [[el]] viene. Yo no [[se]], pero su mamá dice que [[si]]. A [[mi]] me da igual; [[tu]] decides.' } ] },
     { game: 'tildes', title: 'Lluvia de tildes', time: 60, lives: 3, words: [
       { w: 'examenes', a: 'exámenes' }, { w: 'examen', a: 'examen' }, { w: 'jovenes', a: 'jóvenes' }, { w: 'joven', a: 'joven' },
       { w: 'caracter', a: 'carácter' }, { w: 'caracteres', a: 'caracteres' }, { w: 'pais', a: 'país' }, { w: 'raiz', a: 'raíz' },
       { w: 'arroz', a: 'arroz' }, { w: 'maracuya', a: 'maracuyá' }, { w: 'menu', a: 'menú' }, { w: 'tenemos', a: 'tenemos' },
       { w: 'fue', a: 'fue' }, { w: 'Ibague', a: 'Ibagué' }, { w: 'Quibdo', a: 'Quibdó' }, { w: 'heroe', a: 'héroe' } ] },
+    { game: 'corrector', title: 'Corrector de avisos', time: 150, lives: 3, rounds: [
+      { text: 'El sábado {{fue|fué}} la feria. {{Los estudiantes de décimo presentaron|Los estudiantes de décimo, presentaron}} un proyecto sobre el río Bogotá, y los resultados {{fueron|fue}} publicados.', e: '"Fue" es monosílabo, no hay coma entre sujeto y verbo, y "los resultados" pide verbo en plural.' },
+      { text: 'Se {{vende|bende}} lote junto a la vía. {{A ver|Haber}} si se anima: {{ahí|hay}} le dejo el número. {{Llame|Llamé}} ya.', e: 'Vende (de vender), a ver (mirar), ahí (lugar) y llame (orden a usted).' },
+      { text: 'Hoy tenemos sancocho, arroz con coco y jugo de {{maracuyá|maracuya}}. Pregunte por el {{menú|menu}} del día. {{Hubo|Hubieron}} muchas quejas por el ruido.', e: 'Maracuyá y menú son agudas terminadas en vocal; haber impersonal va en singular.' },
+      { text: 'Pregúntale a Juan si {{él|el}} viene. Yo no {{sé|se}}, pero su mamá dice que {{sí|si}}. A {{mí|mi}} me da igual.', e: 'Él, sé, sí y mí llevan tilde diacrítica en estos usos.' },
+      { text: 'Mi abuela vive en {{Cúcuta|Cucuta}} y dice que el {{búho|buho}} de su patio tiene mucho {{carácter|caracter}}.', e: 'Cúcuta es esdrújula, búho tiene hiato y carácter es grave terminada en r.' } ] },
   ],
 };
 
 export const UNIT_GAMES_G10 = {
   g10u1: { game: 'memory', title: 'Parejas de la literatura española', pairs: [
-    ['Cantar de mio Cid', 'Edad Media'], ['Garcilaso de la Vega', 'Renacimiento'], ['Don Quijote', 'Barroco'], ['Rimas de Bécquer', 'Romanticismo'],
-    ['Fortunata y Jacinta', 'Realismo'], ['Rubén Darío', 'Modernismo'], ['Romancero gitano', 'Generación del 27'], ['Las meninas', 'Velázquez'] ] },
-  g10u2: { game: 'blitz', title: 'Contrarreloj tipo Saber', time: 120, lives: 3, quizFrom: 'unit', extraItems: [
-    { q: '"El alcalde anunció que el parque abrirá en junio." ¿Qué pregunta literal responde?', o: ['¿Por qué se abre el parque?', '¿Cuándo abrirá el parque?', '¿Es buena idea el parque?', '¿Quién pagó el parque?'], a: 1, e: '"En junio" responde cuándo: es un dato explícito.', lv: 'L' },
-    { q: '"Pedro llegó empapado y dejó el paraguas roto en la entrada." ¿Qué se infiere?', o: ['Que hacía sol', 'Que llovía y el paraguas no lo protegió', 'Que Pedro no tiene paraguas', 'Que la entrada estaba mojada antes'], a: 1, e: 'Empapado más paraguas roto: llovía y el paraguas falló.', lv: 'I' },
-    { q: 'En "Qué maravilla: otra vez sin agua en el barrio", ¿qué recurso usa el autor?', o: ['Dato estadístico', 'Ironía', 'Cita de autoridad', 'Pregunta literal'], a: 1, e: 'Dice "maravilla" para expresar lo contrario: es ironía.', lv: 'I' },
-    { q: 'Un texto concluye: "Como mi primo reprobó, el examen es imposible". ¿Qué falla tiene?', o: ['Ninguna', 'Generaliza a partir de un solo caso', 'Usa demasiados datos', 'Cita una fuente confiable'], a: 1, e: 'Un caso no basta para una conclusión general.', lv: 'C' },
-    { q: '¿Qué es lo primero que se revisa en una gráfica para saber de dónde salen los datos?', o: ['Los colores', 'La fuente', 'El tamaño', 'El título en mayúsculas'], a: 1, e: 'La fuente permite verificar la información.', lv: 'L' },
-    { q: 'Una columna usa "vergonzoso", "sin duda" y "a mi juicio". ¿Qué tipo de texto es probablemente?', o: ['Una noticia', 'Un texto de opinión', 'Una tabla', 'Un manual de instrucciones'], a: 1, e: 'Las marcas de valoración y certeza son propias de la opinión.', lv: 'I' },
-    { q: 'Dos gráficas muestran los mismos datos, pero una tiene el eje desde cero y la otra no. ¿Cuál representa mejor las diferencias?', o: ['La que tiene el eje desde cero', 'La que no empieza en cero', 'Las dos igual', 'Ninguna'], a: 0, e: 'Un eje desde cero muestra las diferencias en su verdadera proporción.', lv: 'C' } ] },
-  g10u3: { game: 'tildes', title: 'Lluvia de tildes: nivel experto', time: 90, lives: 3, words: [
-    { w: 'regimen', a: 'régimen' }, { w: 'regimenes', a: 'regímenes' }, { w: 'especimen', a: 'espécimen' }, { w: 'especimenes', a: 'especímenes' },
-    { w: 'caracter', a: 'carácter' }, { w: 'caracteres', a: 'caracteres' }, { w: 'oir', a: 'oír' }, { w: 'reir', a: 'reír' },
-    { w: 'baul', a: 'baúl' }, { w: 'buho', a: 'búho' }, { w: 'raices', a: 'raíces' }, { w: 'guion', a: 'guion' },
-    { w: 'truhan', a: 'truhan' }, { w: 'torax', a: 'tórax' }, { w: 'biceps', a: 'bíceps' }, { w: 'ciempies', a: 'ciempiés' },
-    { w: 'decimoseptimo', a: 'decimoséptimo' }, { w: 'compramelo', a: 'cómpramelo' }, { w: 'dandoselo', a: 'dándoselo' }, { w: 'huesped', a: 'huésped' },
-    { w: 'Tulua', a: 'Tuluá' }, { w: 'Cucuta', a: 'Cúcuta' }, { w: 'Medellin', a: 'Medellín' }, { w: 'resumen', a: 'resumen' } ] },
+    ['Cantar de mio Cid', 'Edad Media'], ['Garcilaso de la Vega', 'Renacimiento'], ['La vida es sueño', 'Barroco'], ['Rimas de Bécquer', 'Romanticismo'],
+    ['Fortunata y Jacinta', 'Realismo'], ['Azul... de Rubén Darío', 'Modernismo'], ['Romancero gitano', 'Generación del 27'], ['Las meninas', 'Velázquez'], ['Guernica', 'Picasso'] ] },
+  g10u2: { game: 'detective', title: 'Detective de datos y columnas', time: 180, cases: [
+    { head: 'El TransMiCable redujo a unos trece minutos el viaje al portal', src: 'Informe de movilidad de la Alcaldía', date: 'Enero de 2019', clues: [{ t: 'Da cifras de antes y después', bad: false }, { t: 'Tiene fuente y fecha', bad: false }, { t: 'Coincide con lo que cuentan los vecinos', bad: false }], a: 0, e: 'Dato con fuente, fecha y cifras comprobables: confiable.' },
+    { head: '¡Las ventas de bicicletas se TRIPLICARON en el barrio!', src: 'Página de una tienda de bicicletas', date: 'Marzo de 2026', clues: [{ t: 'La gráfica pasa de 100 a 110 ventas', bad: true }, { t: 'El eje vertical empieza en 95', bad: true }, { t: 'Quien publica vende bicicletas', bad: true }], a: 1, e: 'Los datos son reales, pero el eje recortado exagera un aumento del 10 %: engañosa.' },
+    { head: 'Todos los jóvenes de Colombia odian leer, dice un estudio', src: 'Cadena de WhatsApp sin autor', date: 'Sin fecha', clues: [{ t: 'No dice qué estudio ni quién lo hizo', bad: true }, { t: 'Usa la generalización "todos"', bad: true }, { t: 'Nadie encuentra el estudio', bad: true }], a: 2, e: 'No hay fuente, ni fecha, ni estudio: el dato es inventado.' },
+    { head: 'El 45 % de los estudiantes del colegio llega a pie', src: 'Encuesta del colegio a 600 estudiantes', date: 'Marzo de 2026', clues: [{ t: 'Dice cuántas personas respondieron', bad: false }, { t: 'Tiene fuente y fecha', bad: false }, { t: 'No generaliza a todo el país', bad: false }], a: 0, e: 'Muestra clara, fuente y fecha, y una conclusión que no va más allá de los datos.' },
+    { head: 'Más de la mitad de los estudiantes llega a pie', src: 'Blog que resume la misma encuesta', date: 'Abril de 2026', clues: [{ t: 'El dato original era 45 %', bad: true }, { t: '45 % no alcanza la mitad', bad: true }, { t: 'Cita una encuesta real', bad: false }], a: 1, e: 'Parte de un dato real, pero lo presenta mal: engañosa.' },
+    { head: 'Famoso futbolista asegura que el agua del grifo daña la memoria', src: 'Video en redes del futbolista', date: '2026', clues: [{ t: 'El futbolista no es experto en salud', bad: true }, { t: 'No cita ningún estudio', bad: true }, { t: 'Ninguna entidad de salud lo confirma', bad: true }], a: 2, e: 'Falsa autoridad y un dato sin ningún respaldo: falsa.' },
+    { head: 'La biblioteca abrió y al día siguiente bajaron los robos: acabó con la inseguridad', src: 'Columna de opinión de un vecino', date: 'Mayo de 2026', clues: [{ t: 'Los datos de robos son de un solo día', bad: true }, { t: 'Confunde "después" con "por causa de"', bad: true }, { t: 'La biblioteca sí abrió ese lunes', bad: false }], a: 1, e: 'Los hechos pueden ser ciertos, pero la conclusión es una falsa causa: engañosa.' } ] },
+  g10u3: { game: 'rosco', title: 'El rosco del texto académico', time: 200, items: [
+    { l: 'A', q: 'Empieza por A: palabra con la fuerza en la última sílaba', a: 'aguda' },
+    { l: 'C', q: 'Empieza por C: acuerdo en número y persona entre sujeto y verbo', a: 'concordancia' },
+    { l: 'D', q: 'Empieza por D: tilde que distingue "tú" de "tu" o "él" de "el"', a: 'diacrítica' },
+    { l: 'E', q: 'Empieza por E: palabra como Cúcuta, que lleva tilde siempre', a: 'esdrújula' },
+    { l: 'F', q: 'Empieza por F: parte de la reseña con título, autor y año (ficha…)', a: 'ficha', alt: ['ficha técnica'] },
+    { l: 'G', q: 'Empieza por G: palabra con la fuerza en la penúltima sílaba', a: 'grave', alt: ['llana'] },
+    { l: 'H', q: 'Empieza por H: vocal cerrada con fuerza junto a una abierta, como en "país"', a: 'hiato' },
+    { l: 'I', q: 'Empieza por I: parte de la ponencia que presenta el tema y el propósito', a: 'introducción' },
+    { l: 'P', q: 'Empieza por P: exposición oral formal ante un público académico', a: 'ponencia' },
+    { l: 'R', q: 'Empieza por R: síntesis fiel de lo que se dijo en una sesión', a: 'relatoría' },
+    { l: 'S', q: 'Empieza por S: palabra de significado parecido que evita una repetición', a: 'sinónimo' },
+    { l: 'T', q: 'Empieza por T: idea central que la conclusión de la ponencia retoma', a: 'tesis' },
+    { l: 'U', q: 'Contiene la U: parte de la reseña que cuenta de qué trata sin revelar el final', a: 'resumen' },
+    { l: 'V', q: 'Empieza por V: parte de la reseña que juzga la obra con criterios', a: 'valoración' } ] },
 };

@@ -1,0 +1,157 @@
+/* ============================================================
+   Minijuegos nuevos A: Sopa de letras (.gm-sopa), Crucigrama (.gm-cruci) y El rosco (.gm-rosco).
+   Estética de cuaderno: bordes de lápiz, letras a mano, marcador fosforescente.
+   ============================================================ */
+
+/* ---------- Sopa de letras ---------- */
+.gm-sopa-wrap{--mko:.5;display:flex;gap:22px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+.gm-sopa-board{position:relative;flex:none;width:min(100%,calc(var(--n) * 46px));aspect-ratio:1;margin:4px}
+.gm-sopa-board::before{content:"";position:absolute;inset:-6px;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 6px 6px/calc((100% - 12px) / var(--n)) calc((100% - 12px) / var(--n)),
+    linear-gradient(90deg,color-mix(in srgb,var(--line) 55%,transparent) 1px,transparent 1px) 6px 6px/calc((100% - 12px) / var(--n)) calc((100% - 12px) / var(--n)),
+    var(--surface);
+  border:2px solid var(--pen);border-radius:var(--wob-a,14px);box-shadow:5px 6px 0 var(--hatch);filter:url(#sk-rough)}
+.gm-sopa-ink{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.gm-sopa-ink line{fill:none;stroke-linecap:round}
+.gm-sopa-mk line{stroke:var(--mk);stroke-width:.74;opacity:var(--mko);animation:gm-sopa-draw .45s ease-out both}
+.gm-sopa-mk line.b{stroke-width:.58;opacity:calc(var(--mko) * .6)}
+@keyframes gm-sopa-draw{from{opacity:0;stroke-width:.2}}
+.gm-sopa-sel line{stroke:var(--accent);stroke-width:.72;opacity:.22}
+.gm-sopa-sel line.b{stroke:var(--pen);stroke-width:.05;stroke-dasharray:.18 .12;opacity:.9}
+.gm-sopa-sel.no line{stroke:var(--bad);opacity:.3;animation:gm-sopa-fade .45s ease-in forwards}
+.gm-sopa-sel.no line.b{stroke:var(--bad);opacity:.9}
+@keyframes gm-sopa-fade{to{opacity:0}}
+.gm-sopa-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(var(--n),1fr);grid-template-rows:repeat(var(--n),1fr);
+  container-type:inline-size;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
+.gm-sopa-c{display:grid;place-items:center;position:relative;min-width:0;min-height:0;
+  font:700 min(1.6rem,calc(100cqi / var(--n) * .58))/1 var(--hand,"Kalam",sans-serif);color:var(--ink);transition:transform .12s}
+.gm-sopa-c.on{transform:scale(1.14);color:var(--accent)}
+.gm-sopa-c.got{color:var(--ink)}
+.gm-sopa-c.first::after,.gm-sopa-c.cur::after{content:"";position:absolute;inset:8%;border:2px dashed var(--accent);border-radius:var(--wob-o,50%);pointer-events:none}
+.gm-sopa-c.cur::after{border-style:solid;border-color:var(--pen)}
+.gm-sopa-pop{animation:gm-sopa-pop .5s cubic-bezier(.3,1.8,.5,1) both;animation-delay:var(--d,0s)}
+@keyframes gm-sopa-pop{40%{transform:scale(1.35) rotate(-6deg)}}
+.gm-sopa-side{flex:1 1 250px;max-width:400px;min-width:0}
+.gm-sopa-tip{margin:0 0 8px;font:400 1.1rem var(--pencil,"Patrick Hand",sans-serif);color:var(--muted)}
+.gm-sopa-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.gm-sopa-list li{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;min-height:44px;
+  background:var(--surface);border:1.5px dashed var(--pen2);border-radius:var(--wob-c,10px)}
+.gm-sopa-list .sw{flex:none;width:16px;height:16px;margin-top:4px;border:2px solid var(--pen);border-radius:var(--wob-o,50%);background:transparent}
+.gm-sopa-list .tx{display:flex;flex-direction:column;min-width:0}
+.gm-sopa-list .h{font-size:.98rem;line-height:1.3;color:var(--ink)}
+.gm-sopa-list .nl{font:400 .95rem var(--pencil,"Patrick Hand",sans-serif);color:var(--muted)}
+.gm-sopa-list li.found{border-style:solid;border-color:var(--pen)}
+.gm-sopa-list li.found .sw{background:var(--mk)}
+.gm-sopa-list li.found .h{color:var(--muted)}
+.gm-sopa-list .w{align-self:flex-start;font:700 1.25rem/1.2 var(--hand,"Kalam",sans-serif);color:var(--ink);padding:0 3px;
+  background:linear-gradient(transparent 50%,color-mix(in srgb,var(--mk) calc(var(--mko,.5) * 100%),transparent) 50% 92%,transparent 92%)}
+.gm-sopa-list li.found .nl{display:none}
+:root[data-theme="dark"] .gm-sopa-wrap{--mko:.36}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .gm-sopa-wrap{--mko:.36}}
+@container gm (max-width:560px){
+  .gm-sopa-wrap{gap:16px}
+  .gm-sopa-side{flex-basis:100%;max-width:none}
+  .gm-sopa-list{display:grid;grid-template-columns:1fr;gap:6px}
+  .gm-sopa-list li{padding:6px 10px}
+}
+
+/* ---------- Crucigrama ---------- */
+.gm-cruci-wrap{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+.gm-cruci-main{flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.gm-cruci-now{display:flex;align-items:center;gap:6px;background:var(--surface2);border:1.5px dashed var(--pen2);border-radius:var(--wob-b,10px);padding:4px}
+.gm-cruci-now p{flex:1;margin:0;min-height:40px;display:flex;align-items:center;flex-wrap:wrap;gap:0 6px;font-size:1rem;line-height:1.3;color:var(--ink);padding:4px 2px}
+.gm-cruci-now p b{font:700 1.08rem var(--hand,"Kalam",sans-serif);color:var(--accent)}
+.gm-cruci-now em,.gm-cruci-clue em{font-style:normal;color:var(--muted);font-family:var(--pencil,"Patrick Hand",sans-serif)}
+.gm-cruci-nav{flex:none;width:40px;height:40px;border:1.5px solid var(--pen2);border-radius:var(--wob-o,50%);background:var(--surface);color:var(--ink);
+  font:700 1.5rem/1 var(--hand,"Kalam",sans-serif);cursor:pointer;padding:0}
+.gm-cruci-nav:hover{border-color:var(--pen)}
+.gm-cruci-boardwrap{display:flex;justify-content:center;min-width:0;padding:6px 0}
+.gm-cruci-board{--cell:34px;position:relative;display:grid;grid-template-columns:repeat(var(--cols),var(--cell));grid-auto-rows:var(--cell)}
+.gm-cruci-c{position:relative;background:var(--surface);outline:1.5px solid var(--pen);outline-offset:-.75px;cursor:pointer;
+  border-radius:2px 3px 2px 4px/3px 2px 4px 2px;transition:background .15s}
+.gm-cruci-c:nth-child(3n){border-radius:3px 2px 4px 2px/2px 4px 2px 3px}
+.gm-cruci-c i{position:absolute;top:1px;left:3px;font:400 max(9px,calc(var(--cell) * .3))/1 var(--pencil,"Patrick Hand",sans-serif);font-style:normal;color:var(--muted);pointer-events:none}
+.gm-cruci-c span{display:grid;place-items:center;height:100%;padding-top:calc(var(--cell) * .1);font:700 calc(var(--cell) * .56)/1 var(--hand,"Kalam",sans-serif);color:var(--ink)}
+.gm-cruci-c.word{background:var(--accent-soft)}
+.gm-cruci-c.cur{background:var(--hl-soft);z-index:1;box-shadow:0 0 0 2px var(--pen)}
+.gm-cruci-c.good{background:var(--ok-soft)}
+.gm-cruci-c.good span{color:var(--ok);animation:gm-cruci-wave .5s ease-in-out both;animation-delay:var(--d,0s)}
+@keyframes gm-cruci-wave{40%{transform:translateY(-5px) rotate(-5deg)}}
+.gm-cruci-c.ok span{color:var(--ok)}
+.gm-cruci-c.no{background:var(--bad-soft)}
+.gm-cruci-c.no span{color:var(--bad);text-decoration:line-through 2px}
+.gm-cruci-c.given span{color:var(--accent);text-decoration:underline dotted 2px;text-underline-offset:3px}
+.gm-cruci-in-l span{animation:gm-cruci-pop .25s cubic-bezier(.3,1.8,.5,1)}
+@keyframes gm-cruci-pop{from{transform:scale(1.5)}}
+.gm-cruci-x{pointer-events:none}
+.gm-cruci-in{position:absolute;left:0;top:0;width:var(--cell);height:var(--cell);opacity:0;border:0;padding:0;margin:0;
+  font-size:16px;color:transparent;background:transparent;caret-color:transparent;pointer-events:none;z-index:-1}
+.gm-cruci-tools{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.gm-cruci-tools .gm-btn{min-width:130px}
+.gm-cruci-clues{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.gm-cruci-clues h4{margin:0 0 6px;font-size:1.2rem;color:var(--ink)}
+.gm-cruci-clues ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.gm-cruci-clue{display:flex;align-items:flex-start;gap:8px;width:100%;min-height:42px;padding:6px 8px;text-align:left;cursor:pointer;
+  background:transparent;border:1.5px dashed transparent;border-radius:var(--wob-c,10px);color:var(--ink);font:inherit;font-size:.98rem;line-height:1.3}
+.gm-cruci-clue:hover{border-color:var(--pen2)}
+.gm-cruci-clue b{flex:none;min-width:24px;font:700 1.1rem/1.2 var(--hand,"Kalam",sans-serif);color:var(--accent)}
+.gm-cruci-clue.on{background:var(--hl-soft);border-color:var(--pen)}
+.gm-cruci-clue.done span{color:var(--muted);text-decoration:line-through 1.5px}
+.gm-cruci-clue.done b::after{content:" ✓";color:var(--ok)}
+:root[data-theme="dark"] .gm-cruci-clue.on,:root[data-theme="dark"] .gm-cruci-clue.on *,
+:root[data-theme="dark"] .gm-cruci-c.cur span,:root[data-theme="dark"] .gm-cruci-c.cur i{color:var(--on-hl,#16181D)}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .gm-cruci-clue.on,:root:not([data-theme="light"]) .gm-cruci-clue.on *,
+  :root:not([data-theme="light"]) .gm-cruci-c.cur span,:root:not([data-theme="light"]) .gm-cruci-c.cur i{color:var(--on-hl,#16181D)}
+}
+@container gm (max-width:560px){
+  .gm-cruci-wrap{gap:16px}
+  .gm-cruci-clues{flex-basis:100%}
+}
+
+/* ---------- El rosco ---------- */
+.gm-rosco-wrap{display:flex;gap:24px;align-items:center;justify-content:center;flex-wrap:wrap}
+.gm-rosco-ring{flex:0 1 340px;width:min(100%,340px);min-width:0}
+.gm-rosco-ring svg{display:block;width:100%;height:auto;overflow:visible}
+.gm-rosco-track{fill:none;stroke:var(--pen2);stroke-width:2;stroke-dasharray:7 6}
+.gm-rosco-l circle{fill:var(--surface);stroke:var(--pen);stroke-width:2;transform-box:fill-box;transform-origin:center;transition:fill .25s,stroke .25s}
+.gm-rosco-l text{fill:var(--ink);font-family:var(--hand,"Kalam",sans-serif);font-weight:700;text-anchor:middle;pointer-events:none}
+.gm-rosco-l.pass circle{fill:var(--gold-soft);stroke:var(--gold);stroke-dasharray:4 3}
+.gm-rosco-l.ok circle{fill:var(--ok);stroke:var(--ok)}
+.gm-rosco-l.ok text,.gm-rosco-l.no text{fill:var(--surface)}
+.gm-rosco-l.no circle{fill:var(--bad);stroke:var(--bad)}
+.gm-rosco-l.cur circle{fill:var(--hl);stroke:var(--pen);stroke-width:3;stroke-dasharray:none;animation:gm-rosco-pulse 1.4s ease-in-out infinite}
+.gm-rosco-l.cur text{fill:var(--on-hl,var(--ink))}
+:root:not([data-theme="dark"]) .gm-rosco-l.cur text{fill:#1E2940}
+@keyframes gm-rosco-pulse{50%{transform:scale(1.18)}}
+.gm-rosco-mid .big{font:700 84px var(--hand,"Kalam",sans-serif);fill:var(--accent);text-anchor:middle}
+.gm-rosco-mid .cnt{font:700 26px var(--hand,"Kalam",sans-serif);text-anchor:middle}
+.gm-rosco-mid .cnt.ok{fill:var(--ok)}
+.gm-rosco-mid .cnt.no{fill:var(--bad)}
+.gm-rosco-play{flex:1 1 320px;max-width:540px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.gm-rosco-q{border-left:0;background:var(--surface2);border:1.5px dashed var(--pen2);border-radius:var(--wob-b,12px)}
+.gm-rosco-q .gm-qn{font:400 1.02rem var(--pencil,"Patrick Hand",sans-serif);letter-spacing:.03em;text-transform:none}
+.gm-rosco-q .gm-qt{font:600 clamp(1.1rem,3.2cqi,1.4rem)/1.3 "IBM Plex Sans",sans-serif}
+.gm-rosco-form{display:flex;flex-direction:column;gap:10px}
+.gm-rosco-in{width:100%;min-height:52px;padding:8px 16px;font:400 1.4rem var(--pencil,"Patrick Hand",sans-serif);color:var(--ink);
+  background:var(--surface);border:2px solid var(--pen);border-radius:var(--wob-a,12px);box-shadow:3px 3px 0 var(--hatch)}
+.gm-rosco-in::placeholder{color:var(--muted);opacity:.8}
+.gm-rosco-btns{display:flex;gap:10px;flex-wrap:wrap}
+.gm-rosco-btns .gm-btn{flex:1 1 140px}
+.gm-rosco-fb{padding:12px 16px;border-radius:var(--wob-c,12px);font-size:1.05rem;line-height:1.4;color:var(--ink);border:1.5px solid var(--pen2)}
+.gm-rosco-fb.ok{background:var(--ok-soft);border-color:var(--ok)}
+.gm-rosco-fb.ok b{color:var(--ok);font-family:var(--hand,"Kalam",sans-serif);font-size:1.2rem}
+.gm-rosco-fb.no{background:var(--bad-soft);border-color:var(--bad)}
+.gm-rosco-fb.no b{color:var(--bad);font-family:var(--hand,"Kalam",sans-serif);font-size:1.25rem}
+.gm-rosco-fb span{display:block;color:var(--muted);font-size:.95rem}
+.gm-rosco-keys{margin:0;font-size:.85rem;color:var(--muted)}
+@media (hover:none){.gm-rosco-keys{display:none}}
+@container gm (max-width:560px){
+  .gm-rosco-wrap{gap:12px}
+  .gm-rosco-ring{flex-basis:auto;width:min(100%,300px)}
+  .gm-rosco-play{flex-basis:100%}
+}
+@media (prefers-reduced-motion: reduce){
+  .gm-rosco-l.cur circle{animation:none}
+}

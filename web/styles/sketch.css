@@ -363,3 +363,55 @@ body{min-height:100vh;margin:0}
 :root:not([data-theme="light"]) .bigcode{background:none;text-decoration:underline;text-decoration-color:rgba(242,218,124,.75);text-decoration-thickness:.1em;text-underline-offset:.16em}
 :root:not([data-theme="light"]) .stars{color:var(--muted)}
 }
+
+/* ---------- Aprende masticadito (.bite-): notas de cuaderno bajo cada paso ---------- */
+.bite-box{display:flex;flex-direction:column;gap:12px;animation:stepIn .35s ease}
+.bite-box p{margin:0}
+.bite-lbl{display:inline-block;font:400 1.02rem/1.1 var(--pencil);color:var(--muted);letter-spacing:.02em}
+/* ejemplo: recuadro de lápiz */
+.bite-ej{position:relative;display:flex;flex-direction:column;gap:4px;padding:10px 14px 11px;background:var(--surface);
+  border:2px solid var(--pen2);border-radius:var(--wob-c);box-shadow:2px 3px 0 var(--hatch)}
+.bite-ej .bite-lbl{color:var(--accent)}
+.bite-ej .bite-lbl::before{content:"✎ "}
+.bite-ej p{font:1rem/1.55 "Literata",Georgia,serif}
+/* ojo: post-it con cinta */
+.bite-ojo{position:relative;display:flex;flex-direction:column;gap:3px;padding:14px 14px 11px;margin:4px 6px 0 2px;
+  background:linear-gradient(170deg,var(--gold-soft) 70%,color-mix(in srgb,var(--gold) 12%,var(--gold-soft)));
+  border:1px solid color-mix(in srgb,var(--gold) 38%,transparent);border-radius:2px 3px 14px 2px/2px 3px 10px 2px;
+  box-shadow:3px 4px 0 var(--hatch);transform:rotate(-.7deg)}
+.bite-ojo::before{content:"";position:absolute;top:-10px;left:22px;width:70px;height:20px;transform:rotate(-4deg);pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--tape2) 0 6px,transparent 6px 14px),var(--tape);
+  clip-path:polygon(0 12%,5% 0,95% 4%,100% 16%,97% 50%,100% 86%,94% 100%,4% 96%,0 84%,3% 50%)}
+.bite-ojo .bite-lbl{color:var(--gold);font-family:var(--hand);font-weight:700;font-size:1.08rem}
+.bite-ojo p{font-size:.98rem;line-height:1.45;color:var(--ink)}
+/* ¿Lo pillaste? */
+.bite-chk{display:flex;flex-direction:column;gap:8px;padding:10px 14px 12px;background:var(--surface);
+  border:1.5px dashed var(--pen2);border-radius:var(--wob-d)}
+.bite-chk.ok{border-style:solid;border-color:var(--ok)}
+.bite-chk .bite-lbl{color:var(--ink);font-family:var(--hand);font-weight:700;font-size:1.1rem}
+.bite-q{font-size:1rem;line-height:1.4}
+.bite-opts{display:flex;flex-wrap:wrap;gap:8px}
+.bite-opts button{min-height:40px;padding:6px 14px;font:400 1.05rem/1.2 var(--pencil);color:var(--ink);text-align:left;cursor:pointer;
+  background:var(--surface);border:1.5px solid var(--pen2);border-radius:var(--wob-b);transition:transform .12s,border-color .12s}
+.bite-opts button:nth-child(even){border-radius:var(--wob-a)}
+@media (hover:hover){.bite-opts button:not(:disabled):hover{border-color:var(--pen);transform:rotate(-1deg)}}
+.bite-opts button:disabled{cursor:default;opacity:.55}
+.bite-opts button.right{opacity:1;border:2px solid var(--ok);background:var(--ok-soft);color:var(--ink)}
+.bite-opts button.right b{color:var(--ok)}
+.bite-opts button.wrong{border:2px dashed var(--bad);background:var(--bad-soft)}
+.bite-opts button.wrong b{color:var(--bad)}
+.bite-fb{font-size:.95rem;line-height:1.4;padding:7px 10px;border-radius:var(--wob-c);border:1.5px solid currentColor}
+.bite-fb.ok{background:var(--ok-soft);color:var(--ok)}
+.bite-fb.no{background:var(--bad-soft);color:var(--bad)}
+.bite-retry{font-weight:600}
+/* el botón Siguiente se resalta cuando la preguntica quedó bien */
+.btn.bite-go{box-shadow:3px 3px 0 var(--pen),0 0 0 4px var(--hl);animation:biteNudge .5s ease 2}
+@keyframes biteNudge{50%{transform:translateX(4px) rotate(-1deg)}}
+@media (max-width:560px){
+  .bite-box{gap:10px}
+  .bite-ej,.bite-chk{padding:8px 11px 9px}
+  .bite-ojo{padding:12px 11px 9px}
+  .bite-ej p,.bite-ojo p,.bite-q{font-size:.94rem;line-height:1.4}
+  .bite-opts button{font-size:1rem;padding:5px 11px}
+}
+@media (prefers-reduced-motion: reduce){.bite-box,.btn.bite-go{animation:none}.bite-opts button{transition:none}}

@@ -16,8 +16,14 @@ import puente from './puente.js';
 import detective from './detective.js';
 import rima from './rima.js';
 import duelo from './duelo.js';
+import sopa from './sopa.js';
+import crucigrama from './crucigrama.js';
+import rosco from './rosco.js';
+import conecta from './conecta.js';
+import corrector from './corrector.js';
+import emoji from './emoji.js';
 
-export const GAMES = { blitz, memory, sorter, catcher, word, truefalse, order, builder, hunter, balancer, tildes, puente, detective, rima, duelo };
+export const GAMES = { blitz, memory, sorter, catcher, word, truefalse, order, builder, hunter, balancer, tildes, puente, detective, rima, duelo, sopa, crucigrama, rosco, conecta, corrector, emoji };
 export const GAME_INFO = {
   blitz: { name: 'Contrarreloj', ic: '⏱' },
   memory: { name: 'Parejas', ic: '▦' },
@@ -34,6 +40,12 @@ export const GAME_INFO = {
   detective: { name: 'Detective de noticias', ic: '🔍' },
   rima: { name: 'Rima rápida', ic: '♪' },
   duelo: { name: 'Duelo de argumentos', ic: '⚔' },
+  sopa: { name: 'Sopa de letras', ic: '▦' },
+  crucigrama: { name: 'Crucigrama', ic: '✚' },
+  rosco: { name: 'El rosco', ic: '◯' },
+  conecta: { name: 'Une con líneas', ic: '⤫' },
+  corrector: { name: 'Corrector de estilo', ic: '✎' },
+  emoji: { name: 'Emojiadivina', ic: '☺' },
 };
 
 export function mountGame(el, spec, finish) {

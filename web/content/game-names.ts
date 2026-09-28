@@ -4,4 +4,6 @@ export const GAME_NAME: Record<string, string> = {
   sorter: 'Atrapa y clasifica', balancer: 'Concordancia relámpago', catcher: 'Atrapa', word: 'Palabra secreta',
   truefalse: '¿Mito o verdad?', order: 'Ordena la secuencia', tildes: 'Lluvia de tildes', puente: 'Puente de conectores',
   detective: 'Detective de noticias', rima: 'Rima rápida', duelo: 'Duelo de argumentos',
+  sopa: 'Sopa de letras', crucigrama: 'Crucigrama', rosco: 'El rosco', conecta: 'Une con líneas',
+  corrector: 'Corrector de estilo', emoji: 'Emojiadivina',
 };

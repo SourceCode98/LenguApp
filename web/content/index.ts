@@ -22,4 +22,5 @@ export const LESSON_IDS = new Set(ALL_LESSONS.map((l) => l.id));
 export const ACT_NAME: Record<string, string> = {
   classify: 'Clasificar', order: 'Ordenar', mark: 'Marcar en el texto', cloze: 'Completar', build: 'Armar',
   write: 'Escritura guiada', record: 'Grabar y autoevaluar', map: 'Organizador gráfico',
+  match: 'Unir parejas', choose: 'Situaciones', fix: 'Corrige el texto', comic: 'Historieta',
 };
