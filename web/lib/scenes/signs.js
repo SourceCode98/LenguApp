@@ -191,7 +191,7 @@ export default function (el) {
       const fx = W * (W < 420 ? 0.3 : 0.33), fy = H * 0.47;
       tx = fx - p.cx * k; ty = fy - p.cy * k;
       const it = items[pick], kind = it.kind === 'verbal' ? 'verbal' : 'noverbal';
-      const cx = fx + Math.max(p.w, p.s) * k * 0.5 + 14, cw = W - cx - 12;
+      const cx = fx + Math.max(p.w, p.s) * k * 0.5 + 14, cw = Math.max(0, W - cx - 12);
       const fs = W < 420 ? 16 : 19, lab = String(it.label || '');
       // parte el rótulo en dos líneas si no cabe
       const maxc = Math.max(6, Math.floor(cw / (fs * 0.62)));

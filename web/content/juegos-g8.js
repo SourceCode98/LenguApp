@@ -3,9 +3,10 @@ export const LESSON_GAMES_G8 = {
 
   // Panorama de la literatura colombiana
   g8u1l1: [
-    { game: 'memory', title: 'Autor y obra', pairs: [
-      ['Jorge Isaacs', 'María'], ['José Asunción Silva', 'Nocturno'], ['Tomás Carrasquilla', 'Frutos de mi tierra'], ['José Eustasio Rivera', 'La vorágine'],
-      ['Gabriel García Márquez', 'Cien años de soledad'], ['Álvaro Mutis', 'La nieve del almirante'], ['Laura Restrepo', 'Delirio'], ['Andrés Caicedo', '¡Que viva la música!'] ] },
+    { game: 'conecta', title: 'Autor y obra', time: 120, pairs: [
+      ['Jorge Isaacs', 'María'], ['Tomás Carrasquilla', 'Frutos de mi tierra'], ['Candelario Obeso', 'Cantos populares de mi tierra'],
+      ['José Asunción Silva', 'Nocturno'], ['José Eustasio Rivera', 'La vorágine'], ['Gabriel García Márquez', 'Cien años de soledad'],
+      ['Andrés Caicedo', '¡Que viva la música!'], ['Álvaro Mutis', 'La nieve del almirante'], ['Laura Restrepo', 'Delirio'] ] },
     { game: 'order', title: 'Ordena por época', time: 90, rounds: [
       { prompt: 'Ordena las obras de la más antigua a la más reciente', items: ['María', 'Nocturno', 'La vorágine', 'Cien años de soledad', 'Delirio'], labels: ['1867', '1894', '1924', '1967', '2004'] },
       { prompt: 'Ordena los movimientos en el tiempo', items: ['Romanticismo', 'Modernismo', 'Novela de la tierra', 'Realismo mágico'] },
@@ -25,24 +26,30 @@ export const LESSON_GAMES_G8 = {
       { v: 'Al Valle llegó María / en una tarde de…', o: ['brisa', 'sol', 'verano'], a: 0, kind: 'asonante' },
       { v: 'Por la montaña antioqueña / baja un arriero con…', o: ['su mula', 'leña', 'su carga'], a: 1, kind: 'consonante' },
       { v: 'Suena el acordeón en Valledupar, / la caja y la guacharaca; / la gente baila en la plaza / hasta que despunta el…', o: ['día', 'alba', 'sol'], a: 1, kind: 'asonante' } ] },
-    { game: 'blitz', title: 'Contrarreloj de métrica', time: 75, lives: 3, items: [
-      { q: '¿Cuántas sílabas métricas tiene "lanza su red al juncal"?', o: ['7', '8', '9', '6'], a: 1, e: 'Tiene 7 sílabas y termina en aguda: se suma una.' },
-      { q: '¿Cuántas sílabas métricas tiene "Una garza se levanta"?', o: ['8', '7', '9', '10'], a: 0, e: 'U-na-gar-za-se-le-van-ta: 8, y termina en grave.' },
-      { q: 'La sinalefa une…', o: ['Dos versos', 'La vocal final de una palabra y la inicial de la siguiente', 'Dos estrofas', 'Dos rimas'], a: 1, e: '"Baja el" se cuenta "ba-jael".' },
-      { q: 'Si el verso termina en palabra esdrújula…', o: ['Se suma una sílaba', 'Se resta una sílaba', 'Se deja igual', 'Se suman dos'], a: 1, e: 'Ley del acento final: aguda +1, grave igual, esdrújula −1.' },
-      { q: 'Un verso de once sílabas se llama…', o: ['Octosílabo', 'Alejandrino', 'Endecasílabo', 'Heptasílabo'], a: 2, e: 'Endeca- significa once.' },
-      { q: 'Un soneto tiene…', o: ['Cuatro versos', 'Catorce versos', 'Ocho versos', 'Diez versos'], a: 1, e: 'Dos cuartetos y dos tercetos: 14 versos.' },
-      { q: '"Pena" y "Magdalena" tienen rima…', o: ['Asonante', 'Consonante', 'Libre', 'No riman'], a: 1, e: 'Coinciden vocales y consonantes: -ena.' },
-      { q: '"Casa" y "alba" tienen rima…', o: ['Consonante', 'Asonante', 'Libre', 'No riman'], a: 1, e: 'Solo coinciden las vocales a-a.' },
-      { q: 'Un verso de catorce sílabas se llama…', o: ['Alejandrino', 'Endecasílabo', 'Octosílabo', 'Dodecasílabo'], a: 0, e: 'El alejandrino tiene 14 sílabas, en dos mitades de 7.' },
-      { q: 'En el esquema abab, ¿qué versos riman con el primero?', o: ['El segundo', 'El tercero', 'El cuarto', 'Ninguno'], a: 1, e: 'La misma letra indica la misma rima: 1 con 3, 2 con 4.' } ] },
+    { game: 'crucigrama', title: 'Crucigrama del poema', time: 300, words: [
+      { w: 'verso', h: 'Cada línea de un poema' },
+      { w: 'estrofa', h: 'Grupo de versos' },
+      { w: 'rima', h: 'Repetición de sonidos al final de los versos' },
+      { w: 'sinalefa', h: 'Unión en una sílaba de la vocal final de una palabra y la inicial de la siguiente' },
+      { w: 'soneto', h: 'Poema de catorce endecasílabos' },
+      { w: 'octosílabo', h: 'Verso de ocho sílabas' },
+      { w: 'asonante', h: 'Rima en la que solo se repiten las vocales' },
+      { w: 'cuarteta', h: 'Estrofa de cuatro octosílabos' } ] },
   ],
 
   // Figuras literarias
   g8u1l3: [
-    { game: 'memory', title: 'Figura y ejemplo', pairs: [
-      ['Metáfora', 'Tus ojos son luceros'], ['Símil', 'Blanca como la nieve'], ['Hipérbole', 'Te lo he dicho un millón de veces'], ['Personificación', 'El viento susurra'],
-      ['Anáfora', 'Por ti canto, por ti vivo'], ['Antítesis', 'Es hielo abrasador, es fuego helado'], ['Onomatopeya', 'El tic tac del reloj'], ['Epíteto', 'La blanca nieve'] ] },
+    { game: 'emoji', title: 'Emojifiguras', time: 90, lives: 3, items: [
+      { e: '👀 = ⭐', q: '"Tus ojos son estrellas". ¿Qué figura es?', o: ['Metáfora', 'Símil', 'Hipérbole', 'Anáfora'], a: 0, x: 'Dice que los ojos SON estrellas, sin "como".' },
+      { e: '😄 ≈ 💧', q: '"Tu risa es como el agua de la quebrada". ¿Qué figura es?', o: ['Metáfora', 'Símil', 'Epíteto', 'Onomatopeya'], a: 1, x: 'Usa el enlace "como": es un símil.' },
+      { e: '😭🌊🌊🌊', q: '"Lloré tanto que se desbordó el Magdalena". ¿Qué figura es?', o: ['Personificación', 'Antítesis', 'Hipérbole', 'Símil'], a: 2, x: 'Exagera para dar fuerza a la tristeza.' },
+      { e: '🎸😮‍💨', q: '"La guitarra suspira". ¿Qué figura es?', o: ['Personificación', 'Metáfora', 'Anáfora', 'Epíteto'], a: 0, x: 'Suspirar es humano: se lo da a la guitarra.' },
+      { e: '🙏🎤 🙏💭 🙏❤️', q: '"Por ti canto, por ti sueño, por ti vivo". ¿Qué figura es?', o: ['Hipérbole', 'Anáfora', 'Símil', 'Onomatopeya'], a: 1, x: 'Repite "por ti" al inicio de cada frase.' },
+      { e: '🧊🔥', q: '"Es hielo abrasador, es fuego helado". ¿Qué figura es?', o: ['Epíteto', 'Metáfora', 'Antítesis', 'Personificación'], a: 2, x: 'Enfrenta ideas contrarias: frío y calor.' },
+      { e: '⏰🔊', q: '"El tic tac del reloj". ¿Qué figura es?', o: ['Onomatopeya', 'Anáfora', 'Hipérbole', 'Símil'], a: 0, x: '"Tic tac" imita el sonido del reloj.' },
+      { e: '❄️⚪', q: '"La blanca nieve". ¿Qué figura es?', o: ['Antítesis', 'Símil', 'Hipérbole', 'Epíteto'], a: 3, x: 'Toda nieve es blanca: el adjetivo solo destaca esa cualidad.' },
+      { e: '⏳✖️1000', q: '"Te esperé mil años". ¿Qué figura es?', o: ['Metáfora', 'Hipérbole', 'Onomatopeya', 'Anáfora'], a: 1, x: 'Nadie espera mil años: es una exageración.' },
+      { e: '🌬️🤫', q: '"El viento susurra". ¿Qué figura es?', o: ['Epíteto', 'Símil', 'Personificación', 'Antítesis'], a: 2, x: 'Susurrar es una acción humana que se le da al viento.' } ] },
     { game: 'catcher', title: 'Atrapa las metáforas', rule: 'Atrapa solo las metáforas (A es B, sin "como")', time: 45, lives: 3,
       good: ['Tus ojos son luceros', 'Mi corazón es un acordeón', 'La luna es un farol de plata', 'Tu risa es mi canción', 'La vida es un río', 'Tus cabellos son oro', 'El páramo es una fábrica de agua', 'Mi pueblo es un nido de recuerdos'],
       bad: ['Blanca como la nieve', 'Rápido como un rayo', 'El viento susurra', 'Te esperé mil años', 'Por ti canto, por ti vivo', 'Tu risa parece una canción', 'Llegué tarde a clase'] },
@@ -50,27 +57,17 @@ export const LESSON_GAMES_G8 = {
 
   // Oraciones coordinadas y subordinadas
   g8u2l1: [
-    { game: 'builder', title: 'Constructor de compuestas', time: 150, targets: [
-      { prompt: 'Une con "y" (suma)', pieces: ['La banda tocó', 'y', 'el público aplaudió', 'porque'], answers: [['La banda tocó', 'y', 'el público aplaudió']] },
-      { prompt: 'Une con "pero" (contraste)', pieces: ['Hacía frío', 'pero', 'bailamos toda la noche', 'o'], answers: [['Hacía frío', 'pero', 'bailamos toda la noche']] },
-      { prompt: 'Une con "o" (elección)', pieces: ['¿Compramos la camiseta', 'o', 'ahorramos para el bus?', 'que'], answers: [['¿Compramos la camiseta', 'o', 'ahorramos para el bus?']] },
-      { prompt: 'Une con "ni" (suma de negaciones)', pieces: ['No trajimos capa', 'ni', 'teníamos sombrilla', 'si'], answers: [['No trajimos capa', 'ni', 'teníamos sombrilla']] },
-      { prompt: 'Subordinada con "porque" (causa)', pieces: ['Salimos temprano', 'porque', 'el metro cierra a las once', 'pero'], answers: [['Salimos temprano', 'porque', 'el metro cierra a las once']] },
-      { prompt: 'Subordinada con "cuando" (tiempo)', pieces: ['Todos saltaron', 'cuando', 'sonó la primera canción', 'ni'], answers: [['Todos saltaron', 'cuando', 'sonó la primera canción']] },
-      { prompt: 'Subordinada con "que" (lo que se dice)', pieces: ['Mi hermana dijo', 'que', 'el cartel de este año es muy bueno', 'o'], answers: [['Mi hermana dijo', 'que', 'el cartel de este año es muy bueno']] },
-      { prompt: 'Subordinada con "si" (condición)', pieces: ['Te guardo un puesto', 'si', 'llegas antes de las dos', 'ni'], answers: [['Te guardo un puesto', 'si', 'llegas antes de las dos']] } ] },
     { game: 'sorter', title: '¿Coordinada o subordinada?', bins: ['Coordinada', 'Subordinada'], time: 60, items: [
       ['La banda tocó y el público aplaudió', 0], ['Llovió, pero nadie se fue', 0], ['¿Vienes o te quedas?', 0], ['No llamó ni escribió', 0], ['Llegamos tarde, pero conseguimos puesto', 0], ['Unos cantaban y otros bailaban', 0],
       ['Me dijo que vendría', 1], ['Cuando empezó la música, todos saltaron', 1], ['Si llueve, llevamos capa', 1], ['No fui porque estaba enfermo', 1], ['El grupo que tocó primero es de Cali', 1], ['Iremos donde tú quieras', 1] ] },
+    { game: 'hunter', title: 'Cazador de nexos', time: 90, rounds: [
+      { clue: 'Toca los nexos coordinantes (suman, dan a elegir o contrastan)', text: 'La banda tocó [[y]] el público aplaudió. Hacía frío, [[pero]] nadie se fue. ¿Compramos la camiseta [[o]] ahorramos para el bus? No trajimos capa [[ni]] teníamos sombrilla. Salimos temprano porque el metro cierra a las once.' },
+      { clue: 'Toca los nexos subordinantes (causa, condición, tiempo o lugar)', text: 'Salimos temprano [[porque]] el metro cierra a las once. Te guardo un puesto [[si]] llegas antes de las dos. Todos saltaron [[cuando]] sonó la primera canción. Nos vemos [[donde]] está la tarima. Unos cantaban y otros bailaban.' },
+      { clue: 'Toca los verbos conjugados: cada uno es una proposición', text: 'Rock al Parque [[es]] gratis y [[reúne]] a miles de jóvenes. Mi hermana [[dijo]] que el cartel [[estaba]] muy bueno. [[Llovió]] toda la tarde, pero el público no se [[fue]].' } ] },
   ],
 
   // Coherencia y cohesión
   g8u2l2: [
-    { game: 'order', title: 'Reconstruye el texto', time: 120, rounds: [
-      { prompt: 'Ordena la crónica de la Séptima', items: ['El sábado empecé mi recorrido en la plaza de Bolívar.', 'Allí, un mimo imitaba a los transeúntes.', 'Luego escuché un arpa llanera cerca de la Jiménez.', 'Sin embargo, algunos vendedores se quejaban de las ventas.', 'Finalmente, llegué a la calle 26 al caer la tarde.'] },
-      { prompt: 'Ordena el texto expositivo sobre el frailejón', items: ['El frailejón es una planta típica de los páramos colombianos.', 'Sus hojas peludas atrapan la humedad de la neblina.', 'Gracias a esto, el agua baja poco a poco hacia los ríos.', 'Por eso, proteger los páramos es proteger el agua de las ciudades.'] },
-      { prompt: 'Ordena la receta de las arepas', items: ['Primero, mezcla la harina con agua tibia y sal.', 'Después, amasa hasta que la masa no se pegue.', 'Luego, forma bolitas y aplánalas con las manos.', 'Por último, ásalas en un budare hasta que doren.'] },
-      { prompt: 'Ordena la noticia breve', items: ['Estudiantes de Tunja ganaron un concurso nacional de crónica.', 'Su texto cuenta la historia de un zapatero del centro.', 'El jurado destacó su lenguaje sencillo y cercano.', 'Además, la crónica será publicada en una antología.'] } ] },
     { game: 'puente', title: 'Puente de conectores', time: 90, lives: 3, items: [
       { a: 'Estudié toda la semana', b: 'me fue bien en la evaluación', o: ['por eso', 'sin embargo', 'o sea'], k: 0, e: '"Por eso" introduce una consecuencia.' },
       { a: 'La Séptima es peatonal', b: 'algunos ciclistas pasan a toda velocidad', o: ['por lo tanto', 'sin embargo', 'además'], k: 1, e: '"Sin embargo" marca un contraste con lo esperado.' },
@@ -81,6 +78,11 @@ export const LESSON_GAMES_G8 = {
       { a: 'Es un texto cohesionado', b: 'sus partes están bien conectadas', o: ['es decir', 'sin embargo', 'en cambio'], k: 0, e: '"Es decir" explica con otras palabras.' },
       { a: 'Llovió toda la mañana', b: 'el concierto empezó a tiempo', o: ['por eso', 'aun así', 'o sea'], k: 1, e: '"Aun así" indica que algo ocurre a pesar de lo anterior.' },
       { a: 'No trajimos el mapa', b: 'nos perdimos en La Candelaria', o: ['en cambio', 'además', 'por eso'], k: 2, e: 'Perderse es consecuencia de no llevar el mapa.' } ] },
+    { game: 'corrector', title: 'Corrector de conectores', time: 150, lives: 3, rounds: [
+      { text: 'Llovió toda la mañana; {{aun así|por eso}}, el concierto empezó a tiempo. Llegamos temprano, {{así que|en cambio}} conseguimos buen puesto. {{Finalmente|Primero}}, volvimos a casa felices.', e: '"Aun así" marca contraste, "así que" presenta la consecuencia y "finalmente" cierra el recorrido.' },
+      { text: 'En la Séptima vi a una señora que vendía obleas; {{ella|él}} misma {{las|los}} rellenaba con arequipe. {{Además|Sin embargo}}, vendía jugos de mora.', e: '"Ella" remite a la señora, "las" a las obleas y "además" suma información.' },
+      { text: 'El frailejón vive en el páramo. Sus hojas atrapan la humedad de la neblina; {{por eso|en cambio}}, el agua baja poco a poco a los ríos. {{Es decir|Aunque}}, el páramo es una fábrica de agua.', e: '"Por eso" presenta la consecuencia y "es decir" explica con otras palabras.' },
+      { text: '{{Primero|Finalmente}}, mezcla la harina con agua tibia y sal. {{Después|Sin embargo}}, amasa hasta que no se pegue. {{Por último|Además}}, asa las arepas en un budare.', e: 'Los conectores de tiempo ordenan los pasos: primero, después, por último.' } ] },
   ],
 
   // La concordancia
@@ -111,10 +113,6 @@ export const LESSON_GAMES_G8 = {
 
   // Noticia, opinión y publicidad
   g8u3l1: [
-    { game: 'sorter', title: '¿Informa, opina o vende?', bins: ['Informa', 'Opina', 'Vende'], time: 75, items: [
-      ['El puente reabrió ayer tras seis meses de obras', 0], ['La Registraduría amplió el horario de atención', 0], ['El paro de transportadores terminó a las 6 p. m.', 0], ['Según el censo, el municipio tiene 12.000 habitantes', 0],
-      ['En mi opinión, el colegio necesita más zonas verdes', 1], ['Editorial: la ciudad merece un mejor transporte', 1], ['Caricatura sobre los trancones de la ciudad', 1], ['Es inaceptable que el parque siga sin luz', 1],
-      ['¡Llévelo ya! Últimas unidades', 2], ['El sabor que une a las familias colombianas', 2], ['Descarga la app y recibe el primer domicilio gratis', 2], ['Hecho con amor en el Eje Cafetero', 2] ] },
     { game: 'detective', title: 'Detective de noticias', cases: [
       { head: 'Abren tres bibliotecas públicas en la comuna 8', src: 'Periódico local · sección Ciudad', date: '12 de marzo de 2026', text: 'Las bibliotecas funcionarán de lunes a sábado; la Secretaría de Cultura publicó las direcciones.', clues: [{ t: 'Cita a la Secretaría de Cultura como fuente', bad: false }, { t: 'Da direcciones y horarios que se pueden comprobar', bad: false }, { t: 'La firma una periodista con nombre y apellido', bad: false }], a: 0, e: 'Tiene fuente identificable, datos verificables y autora: es confiable.' },
       { head: '¡Tomar agua de panela con limón cura el dengue!', src: 'Cadena de WhatsApp', date: 'Sin fecha', clues: [{ t: 'No cita ningún estudio ni médico', bad: true }, { t: 'Pide reenviar el mensaje a diez contactos', bad: true }, { t: 'Las autoridades de salud dicen que el dengue requiere atención médica', bad: true }], a: 2, e: 'Afirma algo que contradice a las autoridades de salud y no tiene ninguna fuente: es falsa.' },
@@ -124,21 +122,35 @@ export const LESSON_GAMES_G8 = {
       { head: 'Declaran alerta por crecientes en el río Cauca', src: 'Emisora regional', date: '20 de octubre de 2026', text: 'La nota enlaza el boletín oficial de la autoridad ambiental y cita al coordinador de gestión del riesgo.', clues: [{ t: 'Enlaza el boletín oficial', bad: false }, { t: 'Otros medios informan lo mismo', bad: false }, { t: 'Da recomendaciones de las autoridades', bad: false }], a: 0, e: 'La información coincide con la fuente oficial y con otros medios: es confiable.' },
       { head: 'El 90 % de los jóvenes colombianos ya no lee', src: 'Video viral', date: 'Hace 2 días', clues: [{ t: 'La "encuesta" se hizo a 20 personas de un solo barrio', bad: true }, { t: 'Generaliza a todo el país', bad: true }, { t: 'No muestra la pregunta que se hizo', bad: true }], a: 1, e: 'Parte de un dato real pero mínimo y lo presenta como si fuera de todo el país: es engañosa.' },
       { head: 'Gobierno prohíbe el bocadillo en las loncheras', src: 'Página de humor', date: '28 de diciembre', clues: [{ t: 'La página se presenta como satírica', bad: true }, { t: 'Ningún medio ni entidad oficial lo menciona', bad: true }, { t: 'La fecha es el Día de los Inocentes', bad: true }], a: 2, e: 'Es un chiste de una página de humor que circula como si fuera noticia: es falsa.' } ] },
+    { game: 'sopa', title: 'Sopa de los medios', size: 11, time: 180, words: [
+      { w: 'noticia', h: 'Cuenta hechos comprobables con fuentes' },
+      { w: 'reportaje', h: 'Texto que informa a fondo sobre un tema' },
+      { w: 'fuente', h: 'Quien da el dato en una noticia' },
+      { w: 'columna', h: 'Opinión firmada por una persona' },
+      { w: 'editorial', h: 'Opinión del propio periódico' },
+      { w: 'caricatura', h: 'Opina con humor y dibujos' },
+      { w: 'eslogan', h: 'Frase corta de la publicidad para vender' },
+      { w: 'opinión', h: 'Valora y da argumentos: "creo que…"' } ] },
   ],
 
   // Escuchar y dialogar
   g8u3l2: [
-    { game: 'truefalse', title: '¿Escucha activa o no?', time: 60, lives: 3, items: [
-      { s: 'Mirar el celular mientras un amigo te cuenta un problema es escucha activa.', a: false, e: 'La escucha activa exige atención completa.' },
-      { s: 'Decir "o sea que te preocupa el examen" es parafrasear.', a: true, e: 'Repite con otras palabras lo que dijo el otro.' },
-      { s: 'Interrumpir para dar tu opinión muestra que escuchas.', a: false, e: 'Hay que esperar el turno.' },
-      { s: 'Hacer preguntas sobre lo que el otro dijo ayuda a comprender.', a: true, e: 'Las preguntas aclaran y muestran interés.' },
-      { s: 'Asentir con la cabeza es una señal de escucha.', a: true, e: 'Los gestos también comunican atención.' },
-      { s: 'Si no estoy de acuerdo, lo mejor es burlarme.', a: false, e: 'Se puede discrepar con respeto: eso es ser asertivo.' },
-      { s: 'El tono de voz ayuda a descubrir la intención de quien habla.', a: true, e: 'Una misma frase puede ser petición o reclamo según el tono.' },
-      { s: 'Pensar en mi respuesta mientras el otro habla es escuchar bien.', a: false, e: 'Primero hay que entender; luego responder.' },
-      { s: 'Decir "con gusto" y "por favor" hace parte de la cortesía.', a: true, e: 'Son fórmulas que cuidan la relación con el otro.' },
-      { s: 'Oír y escuchar son exactamente lo mismo.', a: false, e: 'Oír es percibir el sonido; escuchar es poner atención y comprender.' } ] },
+    { game: 'rosco', title: 'El rosco del diálogo', time: 240, items: [
+      { l: 'A', q: 'Empieza por A: quien dice su desacuerdo con respeto, sin burlas ni gritos, es…', a: 'asertivo', alt: ['asertiva'] },
+      { l: 'C', q: 'Empieza por C: fórmulas como "por favor" y "con gusto" son de…', a: 'cortesía' },
+      { l: 'D', q: 'Empieza por D: "Qué pena con usted" sirve para…', a: 'disculparse' },
+      { l: 'E', q: 'Empieza por E: poner atención para comprender lo que el otro dice', a: 'escuchar' },
+      { l: 'F', q: 'Contiene la F: "Si quiere, le ayudo con esas cajas" sirve para…', a: 'ofrecer' },
+      { l: 'G', q: 'Contiene la G: "Mil gracias por fiarme" sirve para…', a: 'agradecer' },
+      { l: 'I', q: 'Empieza por I: lo que quiere lograr quien habla con una frase', a: 'intención' },
+      { l: 'N', q: 'Empieza por N: "¿Y si le pago la mitad hoy?" sirve para…', a: 'negociar' },
+      { l: 'O', q: 'Empieza por O: percibir el sonido sin poner atención', a: 'oír' },
+      { l: 'P', q: 'Empieza por P: decir con otras palabras lo que el otro dijo', a: 'parafrasear' },
+      { l: 'R', q: 'Empieza por R: "El arroz de ayer tenía gorgojo" sirve para…', a: 'reclamar' },
+      { l: 'S', q: 'Empieza por S: "¡Buenas! ¿Cómo amaneció?" sirve para…', a: 'saludar' },
+      { l: 'T', q: 'Empieza por T: rasgo de la voz que ayuda a descubrir la intención', a: 'tono' },
+      { l: 'U', q: 'Contiene la U: en un diálogo hay que respetar los…', a: 'turnos' },
+      { l: 'V', q: 'Contiene la V: "Ojo, que el piso está mojado" sirve para…', a: 'advertir' } ] },
     { game: 'blitz', title: 'Contrarreloj de intenciones', time: 60, lives: 3, items: [
       { q: '"¿Me regala dos panes, por favor?"', o: ['Pedir', 'Reclamar', 'Ofrecer', 'Agradecer'], a: 0, e: 'En Colombia "me regala" es una fórmula cortés para pedir.' },
       { q: '"Vecino, el arroz de ayer tenía gorgojo."', o: ['Agradecer', 'Reclamar', 'Saludar', 'Ofrecer'], a: 1, e: 'Señala un problema con lo comprado.' },
@@ -153,12 +165,26 @@ export const LESSON_GAMES_G8 = {
 
   // El arte y su comunidad
   g8u3l3: [
-    { game: 'memory', title: 'Símbolo y significado', pairs: [
-      ['Paloma blanca', 'Paz'], ['Mariposas amarillas', 'Guiño a García Márquez'], ['Frailejón', 'Páramo y agua'], ['Cóndor', 'Los Andes y la libertad'],
-      ['Manos entrelazadas', 'Solidaridad'], ['Sombrero vueltiao', 'Identidad del Caribe'], ['Mochila wayuu', 'Tejido de La Guajira'], ['Puño en alto', 'Lucha y protesta'] ] },
-    { game: 'catcher', title: 'Atrapa los símbolos', rule: 'Atrapa solo los símbolos de Colombia', time: 45, lives: 3,
-      good: ['Cóndor de los Andes', 'Orquídea Cattleya', 'Palma de cera', 'Bandera tricolor', 'Escudo nacional', 'Sombrero vueltiao', 'Himno nacional'],
-      bad: ['Torre Eiffel', 'Canguro', 'Hoja de arce', 'Águila calva', 'Estatua de la Libertad', 'Pirámide de Guiza', 'Dragón chino'] },
+    { game: 'emoji', title: 'Emojisímbolos', time: 90, lives: 3, items: [
+      { e: '🎵🇨🇴', q: '¿Qué símbolo patrio es?', o: ['Himno nacional', 'Escudo', 'Bandera', 'Sombrero vueltiao'], a: 0, x: 'El himno es el símbolo patrio que se canta.' },
+      { e: '🟨🟦🟥', q: '¿Qué símbolo patrio es?', o: ['Escudo', 'Bandera tricolor', 'Himno nacional', 'Mochila wayuu'], a: 1, x: 'Amarillo, azul y rojo: la bandera tricolor.' },
+      { e: '🦅🛡️', q: '¿Qué ave está en el escudo y qué representa?', o: ['Colibrí: alegría', 'Paloma: paz', 'Cóndor: libertad', 'Garza: agua'], a: 2, x: 'El cóndor de los Andes representa la libertad.' },
+      { e: '🌸🇨🇴', q: '¿Cuál es la flor nacional?', o: ['Orquídea Cattleya', 'Frailejón', 'Rosa', 'Girasol'], a: 0, x: 'La orquídea Cattleya es la flor nacional.' },
+      { e: '🌴☁️🌳', q: '¿Cuál es el árbol nacional?', o: ['Ceiba', 'Palma de cera', 'Guayacán', 'Pino'], a: 1, x: 'La palma de cera es el árbol nacional.' },
+      { e: '🧶👜🏜️', q: '¿Qué tejido es emblema de las mujeres de La Guajira?', o: ['Sombrero vueltiao', 'Ruana', 'Mochila wayuu', 'Hamaca'], a: 2, x: 'La mochila wayuu la tejen las mujeres wayuu.' },
+      { e: '🎨🧱🏘️⛰️', q: 'Grafitis que narran la historia de un barrio de Medellín', o: ['Calle 26', 'Comuna 13', 'Puente Aranda', 'La Candelaria'], a: 1, x: 'Los grafitis de la Comuna 13 cuentan la memoria del barrio.' },
+      { e: '🎨✈️🛣️', q: 'Murales en la avenida que va al aeropuerto de Bogotá', o: ['Comuna 13', 'Carrera Séptima', 'Calle 26', 'Plaza de Bolívar'], a: 2, x: 'Los murales de la calle 26 (avenida El Dorado) llevan al aeropuerto.' },
+      { e: '🕊️🎨', q: 'Un mural con esta figura habla de…', o: ['Guerra', 'Paz', 'Comercio', 'Deporte'], a: 1, x: 'La paloma blanca es símbolo de paz.' },
+      { e: '🌿💧⛰️🎨', q: 'Un mural con frailejones y gotas invita a…', o: ['Talar el páramo', 'Vender plantas', 'Cuidar el agua del páramo', 'Ir de paseo'], a: 2, x: 'El páramo es una fábrica de agua.' } ] },
+    { game: 'word', title: 'Palabra secreta del mural', lives: 6, count: 6, words: [
+      { w: 'mural', h: 'Pintura grande sobre una pared' },
+      { w: 'símbolo', h: 'Imagen que representa una idea' },
+      { w: 'paloma', h: 'Ave blanca que significa paz' },
+      { w: 'cóndor', h: 'Ave del escudo: libertad' },
+      { w: 'identidad', h: 'Lo que hace sentir parte de un país o una región' },
+      { w: 'comunidad', h: 'Grupo de personas de donde nace el arte urbano' },
+      { w: 'memoria', h: 'Lo que el arte urbano ayuda a recordar' },
+      { w: 'grafiti', h: 'Pintura o letras hechas en la calle, muchas veces con aerosol' } ] },
   ],
 };
 
@@ -166,22 +192,19 @@ export const UNIT_GAMES_G8 = {
   g8u1: { game: 'memory', title: 'Parejas de autores colombianos', pairs: [
     ['Jorge Isaacs', 'Romanticismo en el Valle del Cauca'], ['José Asunción Silva', 'Modernismo y musicalidad'], ['Tomás Carrasquilla', 'Costumbrismo antioqueño'], ['José Eustasio Rivera', 'La selva y los caucheros'],
     ['Gabriel García Márquez', 'Macondo y el Nobel de 1982'], ['Álvaro Mutis', 'Maqroll el Gaviero'], ['Candelario Obeso', 'Poesía en el habla del río Magdalena'], ['Andrés Caicedo', 'La Cali de los años setenta'] ] },
-  g8u2: { game: 'balancer', title: 'Concordancia relámpago', time: 150, items: [
-    { parts: [{ t: 'Los niños' }, { o: ['juega', 'juegan'], a: 1 }, { t: 'en el parque.' }], e: 'Sujeto plural, verbo plural.' },
-    { parts: [{ t: 'El aula' }, { o: ['limpio', 'limpia'], a: 1 }, { t: 'huele a pino.' }], e: '"Aula" es femenino aunque lleve "el".' },
-    { parts: [{ o: ['Se arregla', 'Se arreglan'], a: 1 }, { t: 'celulares.' }], e: 'El verbo concuerda con "celulares".' },
-    { parts: [{ o: ['Hubo', 'Hubieron'], a: 0 }, { t: 'fiestas en todo el pueblo.' }], e: '"Haber" de existencia va en singular.' },
-    { parts: [{ t: 'El equipo' }, { o: ['ganó', 'ganaron'], a: 0 }, { t: 'la final.' }], e: '"Equipo" es un colectivo singular.' },
-    { parts: [{ t: 'Usted y yo' }, { o: ['somos', 'son', 'es'], a: 0 }, { t: 'vecinos.' }], e: '"Usted y yo" equivale a "nosotros".' },
-    { parts: [{ o: ['Deben', 'Debe'], a: 1 }, { t: 'haber soluciones.' }], e: 'Con "haber" impersonal, el auxiliar va en singular.' },
-    { parts: [{ t: 'Las' }, { o: ['flor', 'flores'], a: 1 }, { o: ['amarillos', 'amarillas'], a: 1 }, { o: ['adorna', 'adornan'], a: 1 }, { t: 'la mesa.' }], e: 'Todo en femenino plural.' },
-    { parts: [{ t: 'El tema' }, { o: ['principal', 'principales'], a: 0 }, { o: ['es', 'son'], a: 0 }, { t: 'la paz.' }], e: 'Sujeto singular: "el tema".' },
-    { parts: [{ o: ['Faltan', 'Falta'], a: 0 }, { t: 'tres días para el festival.' }], e: 'El sujeto es "tres días": plural.' } ] },
-  g8u3: { game: 'detective', title: 'Detective de noticias', cases: [
-    { head: 'El Festival de la Leyenda Vallenata anuncia sus fechas', src: 'Diario regional · Cultura', date: '5 de enero de 2026', text: 'La fundación organizadora publicó el calendario en su página oficial.', clues: [{ t: 'Cita a la fundación organizadora', bad: false }, { t: 'El calendario aparece en la página oficial', bad: false }, { t: 'Otros medios dan las mismas fechas', bad: false }], a: 0, e: 'Fuente oficial y coincidencia entre medios: es confiable.' },
-    { head: 'Comer mango verde con sal borra los recuerdos', src: 'Audio reenviado', date: 'Sin fecha', clues: [{ t: 'La voz no dice quién es', bad: true }, { t: 'No hay ningún estudio', bad: true }, { t: 'Promete un efecto imposible', bad: true }], a: 2, e: 'Sin autor, sin pruebas y con un efecto imposible: es falsa.' },
-    { head: 'Estudiantes de un colegio de Pasto crean app de lengua de señas', src: 'Noticiero regional', date: '14 de mayo de 2026', text: 'La nota entrevista a los estudiantes y a su profesora, y muestra la aplicación.', clues: [{ t: 'Entrevista a los protagonistas', bad: false }, { t: 'Muestra la app funcionando', bad: false }, { t: 'Da el nombre del colegio', bad: false }], a: 0, e: 'Tiene protagonistas identificables y pruebas: es confiable.' },
-    { head: 'Nadie quiere ya el ajiaco: se vende la mitad que antes', src: 'Portal de entretenimiento', date: '2 de junio de 2026', clues: [{ t: 'El dato viene de un solo restaurante', bad: true }, { t: 'El titular habla de "nadie"', bad: true }, { t: 'El dueño explica que cerró por obras dos semanas', bad: true }], a: 1, e: 'Toma un caso aislado y lo generaliza: es engañosa.' },
-    { head: 'Video muestra un caimán en la avenida Boyacá', src: 'Cuenta anónima', date: 'Hoy', clues: [{ t: 'El video se grabó en otro país en 2021', bad: true }, { t: 'Nadie más lo reporta', bad: true }, { t: 'La cuenta se creó hace una semana', bad: true }], a: 2, e: 'El hecho no ocurrió en Bogotá: es un video ajeno con otro texto. Es falsa.' },
-    { head: 'Sube el precio del pasaje: "un golpe al bolsillo", dice columnista', src: 'Periódico nacional · Opinión', date: '10 de enero de 2026', text: 'El alza es real y aparece en el decreto; la frase entre comillas es la opinión de un columnista.', clues: [{ t: 'El alza aparece en un decreto oficial', bad: false }, { t: 'La valoración está en la sección de opinión y firmada', bad: false }], a: 0, e: 'Informa un hecho verificable y separa con claridad la opinión: es confiable.' } ] },
+  g8u2: { game: 'builder', title: 'Constructor de la unidad', time: 180, targets: [
+    { prompt: 'Coordinada con contraste', pieces: ['Hacía frío', 'pero', 'porque', 'bailamos toda la noche'], answers: [['Hacía frío', 'pero', 'bailamos toda la noche']] },
+    { prompt: 'Subordinada de causa', pieces: ['Salimos temprano', 'porque', 'y', 'el metro cierra a las once'], answers: [['Salimos temprano', 'porque', 'el metro cierra a las once']] },
+    { prompt: 'Subordinada de condición', pieces: ['Te guardo un puesto', 'si', 'ni', 'llegas antes de las dos'], answers: [['Te guardo un puesto', 'si', 'llegas antes de las dos']] },
+    { prompt: 'Une con un conector de contraste', pieces: ['Llovió toda la mañana;', 'sin embargo,', 'por eso,', 'el concierto empezó a tiempo'], answers: [['Llovió toda la mañana;', 'sin embargo,', 'el concierto empezó a tiempo']] },
+    { prompt: 'Une con un conector de consecuencia', pieces: ['El bus iba lleno,', 'así que', 'en cambio', 'decidimos caminar'], answers: [['El bus iba lleno,', 'así que', 'decidimos caminar']] },
+    { prompt: 'Aviso con buena concordancia', pieces: ['Se', 'venden', 'vende', 'empanadas'], answers: [['Se', 'venden', 'empanadas']] },
+    { prompt: '"Haber" de existencia', pieces: ['Ayer', 'hubo', 'hubieron', 'muchos', 'problemas'], answers: [['Ayer', 'hubo', 'muchos', 'problemas']] },
+    { prompt: 'Sustantivo colectivo', pieces: ['La', 'gente', 'llegó', 'llegaron', 'temprano'], answers: [['La', 'gente', 'llegó', 'temprano']] },
+    { prompt: 'Género que engaña', pieces: ['El', 'agua', 'fría', 'frío', 'se', 'acabó'], answers: [['El', 'agua', 'fría', 'se', 'acabó']] } ] },
+  g8u3: { game: 'conecta', title: 'Une los discursos', time: 150, pairs: [
+    ['Noticia', 'Cuenta hechos con fuentes'], ['Editorial', 'Opinión del propio periódico'], ['Eslogan', 'Frase para vender'],
+    ['Foto vieja fuera de contexto', 'Información engañosa'], ['Parafrasear', 'Decir con otras palabras lo que el otro dijo'],
+    ['"¿Me regala dos panes?"', 'Pedir'], ['"Qué pena con usted"', 'Disculparse'], ['Paloma blanca', 'Paz'],
+    ['Frailejón', 'Páramo, fábrica de agua'], ['Mochila wayuu', 'Tejido de La Guajira'] ] },
 };

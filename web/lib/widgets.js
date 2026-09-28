@@ -2,6 +2,7 @@
 // Contrato: W[type] = (el, spec, done) => dispose | null. done() se llama una vez cuando el estudiante termina bien.
 import { esc, shuffle, nid } from './kit.js';
 import { parseMarked, parseCloze, words } from './text.js';
+import { EXTRA } from './activities-extra.js';
 
 const W = {};
 const fb = (ok, msg) => '<div class="fb ' + (ok ? 'ok' : 'no') + '">' + msg + '</div>';
@@ -305,6 +306,8 @@ W.map = (el, s, done) => {
   render();
   return null;
 };
+
+Object.assign(W, EXTRA);
 
 export function mountWidget(el, spec, done) {
   let fired = false;

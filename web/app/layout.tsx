@@ -9,6 +9,8 @@ import '@/styles/games.css';
 import '@/styles/scenes-lengua.css';
 import '@/styles/games-lengua.css';
 import '@/styles/activities.css';
+import '@/styles/games-extra-a.css';
+import '@/styles/games-extra-b.css';
 import '@/styles/sketch.css';
 
 export const metadata: Metadata = {
