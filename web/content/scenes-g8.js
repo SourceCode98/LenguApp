@@ -2,7 +2,7 @@
 export const SCENES_G8 = {
   g8u1l1: { type: 'gallery', rooms: [
     { n: 'Romanticismo', y: '1840-1880', c: '#8A4B6E', tags: ['Isaacs', 'María', 'sentimiento'] },
-    { n: 'Costumbrismo', y: '1850-1920', c: '#B06A10', tags: ['Carrasquilla', 'habla popular'] },
+    { n: 'Costumbrismo', y: '1850-1920', c: '#B06A10', tags: ['Carrasquilla', 'Obeso', 'habla popular'] },
     { n: 'Modernismo', y: '1885-1915', c: '#1F5FA8', tags: ['Silva', 'Nocturno', 'musicalidad'] },
     { n: 'Novela de la tierra', y: '1920-1940', c: '#2F7D32', tags: ['Rivera', 'La vorágine', 'selva'] },
     { n: 'Realismo mágico', y: '1955-1985', c: '#D4A017', tags: ['García Márquez', 'Macondo'] },
@@ -10,7 +10,8 @@ export const SCENES_G8 = {
   ], steps: [
     { t: 'Romanticismo y costumbrismo', at: 0 },
     { t: 'Modernismo y novela de la tierra', at: 2 },
-    { t: 'Realismo mágico y después', at: 4 },
+    { t: 'Realismo mágico: Macondo', at: 4 },
+    { t: 'Voces contemporáneas', at: 5 },
   ] },
   g8u1l2: { type: 'poem', lines: [
     { t: 'Baja el río Magdalena', syl: 8, rhyme: 'a' }, { t: 'con su canto de metal;', syl: 8, rhyme: 'b' },
@@ -26,6 +27,7 @@ export const SCENES_G8 = {
     { t: 'Metáfora: A es B', kind: 'metafora', a: 'ojos', b: 'luceros', text: 'Tus ojos son luceros' },
     { t: 'Personificación: humanizar', kind: 'personificacion', a: 'guitarra', b: '', text: 'La guitarra suspira' },
     { t: 'Anáfora: repetir al inicio', kind: 'anafora', a: 'Por ti', b: '', text: 'Por ti canto, por ti sueño, por ti vivo' },
+    { t: 'Antítesis: ideas opuestas', kind: 'antitesis', a: 'hielo', b: 'fuego', text: 'Es hielo abrasador, es fuego helado' },
   ] },
   g8u2l1: { type: 'sentence', subj: ['Rock', 'al', 'Parque'], pred: ['es', 'gratis'], nuc: { s: 0, p: 0 }, steps: [
     { t: 'Oración simple: un verbo', show: 'nuclei', nexo: null, second: null },
@@ -37,12 +39,17 @@ export const SCENES_G8 = {
   ], steps: [
     { t: 'Coherencia: un tema y un orden', focus: null, remove: null },
     { t: 'Cohesión: conectores y pronombres', focus: 1 },
-    { t: 'Sin unión, el texto se cae', focus: null, remove: 1 },
+    { t: 'Cada conector, una relación', focus: null, parts: [
+      { n: 'Suma', t: 'además' }, { n: 'Contraste', t: 'sin embargo, en cambio' }, { n: 'Consecuencia', t: 'por eso, así que' },
+      { n: 'Tiempo', t: 'luego, finalmente' }, { n: 'Explicación', t: 'es decir, o sea' } ] },
+    { t: 'Sin unión, el texto se cae', focus: null, remove: 1, parts: [
+      { n: 'Inicio', t: 'Plaza de Bolívar: un mimo' }, { n: 'Desarrollo', t: 'Luego, arpa y obleas' }, { n: 'Cierre', t: 'Finalmente, la calle 26' } ] },
   ] },
   g8u2l3: { type: 'sentence', subj: ['Los', 'estudiantes', 'nuevos'], pred: ['llegaron', 'temprano'], nuc: { s: 1, p: 0 }, cats: ['art', 'sus', 'adj', 'ver', 'adv'], steps: [
     { t: 'Género y número en el sujeto', show: 'cats', focusCat: 'adj', plural: true },
     { t: 'Sujeto y verbo concuerdan', subj: ['La', 'estudiante', 'nueva'], pred: ['llegó', 'temprano'], show: 'nuclei', plural: false },
     { t: 'Errores de los avisos', subj: ['Muchas', 'empanadas'], pred: ['se', 'venden', 'aquí'], nuc: { s: 1, p: 1 }, cats: ['det', 'sus', 'pro', 'ver', 'adv'], show: 'nuclei', plural: true },
+    { t: 'El género que engaña', subj: ['El', 'agua', 'fría'], pred: ['se', 'acabó'], nuc: { s: 1, p: 1 }, cats: ['art', 'sus', 'adj', 'pro', 'ver'], show: 'cats', focusCat: 'adj', plural: false },
   ] },
   g8u3l1: { type: 'newsdesk', blocks: [
     { k: 'titular', t: 'Abren tres bibliotecas en la comuna' }, { k: 'entrada', t: 'Qué, quién, cuándo y dónde' }, { k: 'fuente', t: 'Reporte de la Alcaldía' },
@@ -51,6 +58,9 @@ export const SCENES_G8 = {
     { t: 'Informar: hechos y fuentes', focus: 'entrada', ask: ['qué', 'quién', 'cuándo', 'dónde'] },
     { t: 'Opinar: valorar y argumentar', focus: 'opinion', ask: null },
     { t: 'Vender: persuadir', focus: 'foto' },
+    { t: '¿Confiable, engañosa o falsa?', focus: 'fuente', blocks: [
+      { k: 'titular', t: 'Abren tres bibliotecas en la comuna' }, { k: 'fuente', t: 'Reporte de la Alcaldía' },
+      { k: 'dato', t: 'Otros medios lo confirman' }, { k: 'foto', t: 'Foto de 2019: ¿fuera de contexto?' } ] },
   ] },
   g8u3l2: { type: 'voice', mode: 'plana', text: 'Buenos días, ¿me regala una bolsa, por favor?', pauses: [], steps: [
     { t: 'Oír no es escuchar', mode: 'plana' },
@@ -64,6 +74,13 @@ export const SCENES_G8 = {
   ], steps: [
     { t: 'Qué dice el mural', highlight: 'verbal' },
     { t: 'Los símbolos hablan', highlight: 'noverbal' },
-    { t: 'A quién le habla', highlight: null, pick: 5 },
+    { t: 'Símbolos de identidad', highlight: 'noverbal', pick: null, items: [
+      { kind: 'verbal', icon: 'texto', label: 'Himno nacional' }, { kind: 'noverbal', icon: 'texto', label: 'Cóndor: libertad' },
+      { kind: 'noverbal', icon: 'texto', label: 'Mochila wayuu' }, { kind: 'noverbal', icon: 'texto', label: 'Sombrero vueltiao' },
+      { kind: 'noverbal', icon: 'texto', label: 'Bandera tricolor' } ] },
+    { t: 'A quién le habla', highlight: null, pick: 5, items: [
+      { kind: 'verbal', icon: 'texto', label: 'La memoria florece' }, { kind: 'noverbal', icon: 'mano', label: 'Manos abiertas' },
+      { kind: 'noverbal', icon: 'flecha', label: 'Camino al barrio' }, { kind: 'verbal', icon: 'texto', label: 'Firma del colectivo' },
+      { kind: 'noverbal', icon: 'prohibido', label: 'No a la violencia' }, { kind: 'noverbal', icon: 'bus', label: 'Mural del paradero' } ] },
   ] },
 };

@@ -4,13 +4,13 @@ export const LESSON_GAMES_G8 = {
   // Panorama de la literatura colombiana
   g8u1l1: [
     { game: 'memory', title: 'Autor y obra', pairs: [
-      ['Jorge Isaacs', 'María'], ['José Asunción Silva', 'Nocturno'], ['Tomás Carrasquilla', 'La marquesa de Yolombó'], ['José Eustasio Rivera', 'La vorágine'],
+      ['Jorge Isaacs', 'María'], ['José Asunción Silva', 'Nocturno'], ['Tomás Carrasquilla', 'Frutos de mi tierra'], ['José Eustasio Rivera', 'La vorágine'],
       ['Gabriel García Márquez', 'Cien años de soledad'], ['Álvaro Mutis', 'La nieve del almirante'], ['Laura Restrepo', 'Delirio'], ['Andrés Caicedo', '¡Que viva la música!'] ] },
     { game: 'order', title: 'Ordena por época', time: 90, rounds: [
       { prompt: 'Ordena las obras de la más antigua a la más reciente', items: ['María', 'Nocturno', 'La vorágine', 'Cien años de soledad', 'Delirio'], labels: ['1867', '1894', '1924', '1967', '2004'] },
       { prompt: 'Ordena los movimientos en el tiempo', items: ['Romanticismo', 'Modernismo', 'Novela de la tierra', 'Realismo mágico'] },
-      { prompt: 'Ordena a los autores por año de nacimiento', items: ['Jorge Isaacs', 'Tomás Carrasquilla', 'José Asunción Silva', 'José Eustasio Rivera', 'Gabriel García Márquez', 'Andrés Caicedo'], labels: ['1837', '1858', '1865', '1888', '1927', '1951'] },
-      { prompt: 'Ordena las obras de García Márquez por fecha de publicación', items: ['La hojarasca', 'El coronel no tiene quien le escriba', 'Cien años de soledad', 'Crónica de una muerte anunciada', 'El amor en los tiempos del cólera'], labels: ['1955', '1961', '1967', '1981', '1985'] } ] },
+      { prompt: 'Ordena a los autores según el movimiento al que pertenecen, del más antiguo al más reciente', items: ['Jorge Isaacs', 'José Asunción Silva', 'José Eustasio Rivera', 'Gabriel García Márquez', 'Laura Restrepo'], labels: ['Romanticismo', 'Modernismo', 'Novela de la tierra', 'Realismo mágico', 'Voces contemporáneas'] },
+      { prompt: 'Ordena estas otras obras de la más antigua a la más reciente', items: ['Cantos populares de mi tierra', 'Frutos de mi tierra', '¡Que viva la música!', 'La nieve del almirante', 'Delirio'], labels: ['1877', '1896', '1977', '1986', '2004'] } ] },
   ],
 
   // El poema: verso, estrofa y rima
